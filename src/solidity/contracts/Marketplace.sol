@@ -73,7 +73,7 @@ contract Marketplace is ReentrancyGuard {
 
         uint256 tokenCount = 0;
         for(uint i=0; i<_tokenURIs.length; i++){
-            tokenCount = _nft.mint(_tokenURIs[i], address(this));
+            tokenCount = _nft.mint(_tokenURIs[i], address(this), contractOwner);
         }
 
         if (_collectionOwner != address(0)) {

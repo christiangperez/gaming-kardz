@@ -1,0 +1,13 @@
+{
+  "beneficiary": "0x0123456789012345678901234567890123456789",
+  "nfts": [
+    {
+      "image": "https://ipfs.infura.io/ipfs/asdfASDFasdfASDFasdfASDFasdfASDFasdfASDFasdfAS",
+      "price": "1",
+      "name": "PlayerName",
+      "team": "TeamName",
+      "game": "GameName",
+      "description": "Description of card."
+    }
+  ]
+}

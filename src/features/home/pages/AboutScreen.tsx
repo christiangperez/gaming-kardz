@@ -7,6 +7,7 @@ import {
   Link,
 } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
+import LinkedinIcon from '@mui/icons-material/LinkedIn';
 
 export const AboutScreen = () => {
   return (
@@ -20,7 +21,7 @@ export const AboutScreen = () => {
       >
         <Grid display="flex" justifyContent="center">
           <Grid>
-            <Typography color="white" variant="subtitle1" textAlign="center">
+            <Typography color="primary" variant="subtitle1" textAlign="center">
               About
             </Typography>
             <Typography color="white" variant="h2">
@@ -85,6 +86,26 @@ export const AboutScreen = () => {
                   <Typography variant="subtitle1">
                     christiangperez@gmail.com
                   </Typography>
+                </Grid>
+              </Link>
+            </IconButton>
+          </Typography>
+        </Container>
+        <Container>
+          <Typography color="black" variant="h6">
+            Or visit my Linkedin:
+            <IconButton disableRipple>
+              <Link
+                color="black"
+                underline="none"
+                href="https://www.linkedin.com/in/christian-g-perez/"
+                variant="body2"
+              >
+                <Grid display="flex">
+                  <LinkedinIcon
+                    sx={{ color: 'black', fontSize: 24, marginRight: 1 }}
+                  />
+                  <Typography variant="subtitle1">Linkedin</Typography>
                 </Grid>
               </Link>
             </IconButton>

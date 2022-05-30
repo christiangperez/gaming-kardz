@@ -405,8 +405,8 @@
       ]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/src/solidity/contracts/NFT.sol": {
-      "lastModificationDate": 1651194091013,
-      "contentHash": "3e06ac01a9f57ceeac7cef12eecabe08",
+      "lastModificationDate": 1653612534587,
+      "contentHash": "174f385bfb8587f3a3bb62d633f8dfce",
       "sourceName": "src/solidity/contracts/NFT.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -443,8 +443,8 @@
       ]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/src/solidity/interfaces/INFT.sol": {
-      "lastModificationDate": 1651193990084,
-      "contentHash": "9141fa0506552648b6d6e360f8bde2d8",
+      "lastModificationDate": 1653612414071,
+      "contentHash": "bd54b451e133e046332d53d000e9bfc3",
       "sourceName": "src/solidity/interfaces/INFT.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -478,8 +478,8 @@
       ]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/src/solidity/contracts/Marketplace.sol": {
-      "lastModificationDate": 1651521898105,
-      "contentHash": "2d9a193595f1216d874979c953b3c080",
+      "lastModificationDate": 1653612566024,
+      "contentHash": "4c00feea8e917f7a3fd2b6a4ac012b29",
       "sourceName": "src/solidity/contracts/Marketplace.sol",
       "solcConfig": {
         "version": "0.8.4",

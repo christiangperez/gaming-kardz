@@ -6,10 +6,14 @@ import '../interfaces/INFT.sol';
 
 contract NFT is ERC721URIStorageReplace, INFT {
     uint public tokenCount;
+    address contractOwner;
 
-    constructor() ERC721("DApp NFT", "DAPP") {}
+    constructor() ERC721("DApp NFT", "DAPP") {
+        contractOwner = msg.sender;
+    }
 
-    function mint(string memory _tokenURI, address from) external override returns (uint) {
+    function mint(string memory _tokenURI, address from, address minter) external override returns (uint) {
+        require(minter == contractOwner, 'You are not the owner.');
         tokenCount ++;
         _safeMint(from, tokenCount);
         _setTokenURI(tokenCount, _tokenURI);

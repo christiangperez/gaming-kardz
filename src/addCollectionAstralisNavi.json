@@ -1,0 +1,85 @@
+{
+  "beneficiary": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+  "nfts": [
+    {
+      "image": "https://ipfs.infura.io/ipfs/Qmdqq4SCggJ4uBDSYNkUK63VqhokwjVsW9zNbxtdCH6W8k",
+      "price": "2",
+      "name": "Device",
+      "team": "Astralis",
+      "game": "CSGO",
+      "description": "Device played in the best danish team of history. His role is the awper and he leads scores in every match."
+    },
+    {
+      "image": "https://ipfs.infura.io/ipfs/QmU7XhaZ58nZUqpBoG8sKdJ7enjBxUcqg4q92mPqZJiF3V",
+      "price": "1",
+      "name": "Dupreeh",
+      "team": "Astralis",
+      "game": "CSGO",
+      "description": "Device played in the best danish team of history. His role is the awper and he leads scores in every match."
+    },
+    {
+      "image": "https://ipfs.infura.io/ipfs/Qme6qK6tFGgrbq591pwgLoHexjbVPtfewGmPcjGWRYzc7i",
+      "price": "0.4",
+      "name": "gla1ve",
+      "team": "Astralis",
+      "game": "CSGO",
+      "description": "Device played in the best danish team of history. His role is the awper and he leads scores in every match."
+    },
+    {
+      "image": "https://ipfs.infura.io/ipfs/QmYocxo5xbwypuA3hmPzGQfzFX9e3K4Ecxjwb78k4wj9ju",
+      "price": "0.8",
+      "name": "Magisk",
+      "team": "Astralis",
+      "game": "CSGO",
+      "description": "Device played in the best danish team of history. His role is the awper and he leads scores in every match."
+    },
+    {
+      "image": "https://ipfs.infura.io/ipfs/QmUfV4LQA6qTXv5ntc3TAbc3isxJZdfdCjJzgBwqFNoL9R",
+      "price": "0.1",
+      "name": "Xyp9x",
+      "team": "Astralis",
+      "game": "CSGO",
+      "description": "Device played in the best danish team of history. His role is the awper and he leads scores in every match."
+    },
+    {
+      "image": "https://ipfs.infura.io/ipfs/QmaCFuuhNzb6pzm5YgPj7axVhhBRgWPfXAxjCe5J7kJGLZ",
+      "price": "0.1",
+      "name": "B1t",
+      "team": "NaVi",
+      "game": "CSGO",
+      "description": "Device played in the best danish team of history. His role is the awper and he leads scores in every match."
+    },
+    {
+      "image": "https://ipfs.infura.io/ipfs/QmVM1sMn9me6oHPHdi9rrnA2T2DBk46m5vmjRfzEyr8gB6",
+      "price": "0.2",
+      "name": "Edward",
+      "team": "NaVi",
+      "game": "CSGO",
+      "description": "Device played in the best danish team of history. His role is the awper and he leads scores in every match."
+    },
+    {
+      "image": "https://ipfs.infura.io/ipfs/QmQoYu5jZ3Td2tFYE8dXeDHPxF4GYDGyF5uK8rCHTkhzyQ",
+      "price": "1.5",
+      "name": "electronic",
+      "team": "NaVi",
+      "game": "CSGO",
+      "description": "Device played in the best danish team of history. His role is the awper and he leads scores in every match."
+    },
+    {
+      "image": "https://ipfs.infura.io/ipfs/QmSpQ3MBXW2TcBoLhTbcTR5oxQk7uro4PZTo6DckuRC4Yy",
+      "price": "5",
+      "name": "s1mple",
+      "team": "NaVi",
+      "game": "CSGO",
+      "description": "Device played in the best danish team of history. His role is the awper and he leads scores in every match."
+    },
+    {
+      "image": "https://ipfs.infura.io/ipfs/QmbjTrqNEhnNzLLPcX64aFZcxh12Mc6Pguhmf8RTWRReLP",
+      "price": "0.1",
+      "name": "Zeus",
+      "team": "NaVi",
+      "game": "CSGO",
+      "description": "Device played in the best danish team of history. His role is the awper and he leads scores in every match."
+    }
+  ]
+}

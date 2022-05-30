@@ -14,7 +14,7 @@ import {
 } from '../../../redux/actions/marketActions';
 import { INFTItem } from '../../../interfaces/marketplaceInterfaces';
 import { useNavigate } from 'react-router-dom';
-import { NFTCard } from '../components/NFTCard';
+import { NFTMarketplaceCard } from '../components/NFTMarketplaceCard';
 
 export const MarketplaceScreen = () => {
   const navigate = useNavigate();
@@ -38,11 +38,11 @@ export const MarketplaceScreen = () => {
 
   if (loadingMarketplaceItems) {
     return (
-      <Container maxWidth='xl' sx={{ background: '#0c1410' }}>
+      <Container maxWidth="xl" sx={{ background: '#0c1410' }}>
         <Grid
-          display='flex'
-          justifyContent='center'
-          alignItems='center'
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
           sx={{ height: '90vh' }}
         >
           <Box sx={{ display: 'flex' }}>
@@ -55,7 +55,7 @@ export const MarketplaceScreen = () => {
 
   return (
     <Container
-      maxWidth='xl'
+      maxWidth="xl"
       sx={{ paddingTop: 2 }}
       style={{
         background: 'linear-gradient(to right bottom, #0c1410, #192112)',
@@ -63,24 +63,24 @@ export const MarketplaceScreen = () => {
     >
       {marketplaceItems.length > 0 ? (
         <>
-          <Grid display='flex' justifyContent='center'>
+          <Grid display="flex" justifyContent="center">
             <Grid>
-              <Typography color='white' variant='h2'>
+              <Typography color="white" variant="h2">
                 Market
               </Typography>
-              <Typography color='white' variant='subtitle1'>
+              <Typography color="white" variant="subtitle1">
                 Explore and collect your NFTs
               </Typography>
             </Grid>
           </Grid>
           <Grid
             container
-            display='flex'
-            justifyContent='center'
+            display="flex"
+            justifyContent="center"
             sx={{ marginTop: 4 }}
           >
             {marketplaceItems.map((item, idx) => (
-              <NFTCard
+              <NFTMarketplaceCard
                 key={idx}
                 item={item}
                 handleClickCard={handleClickCard}
@@ -90,8 +90,8 @@ export const MarketplaceScreen = () => {
           </Grid>
         </>
       ) : (
-        <Grid display='flex' justifyContent='center'>
-          <Typography color='white' variant='h5'>
+        <Grid display="flex" justifyContent="center">
+          <Typography color="white" variant="h5">
             Oops.. no listed assets
           </Typography>
         </Grid>

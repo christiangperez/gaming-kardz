@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import {
   Container,
@@ -8,25 +8,30 @@ import {
   Box,
   useMediaQuery,
   useTheme,
-  Link,
-  IconButton,
 } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SellIcon from '@mui/icons-material/Sell';
 import PaidIcon from '@mui/icons-material/Paid';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
 import { StepsCard } from '../components/StepsCard';
 import { Footer } from '../components/Footer';
+import './Home.css';
 
 export const HomeScreen = () => {
   const navigate = useNavigate();
+
+  const refSellImage = useRef<HTMLHeadingElement>(null);
+  const refSellDescription = useRef<HTMLHeadingElement>(null);
+
+  const refRoyaltiesTitle = useRef<HTMLHeadingElement>(null);
+  const refRoyaltiesSubtitle = useRef<HTMLHeadingElement>(null);
+  const refRoyaltiesCards = useRef<HTMLHeadingElement>(null);
+
   const [height, setHeight] = useState(window.innerHeight);
   const theme = useTheme();
   const isSmOrLess = useMediaQuery(theme.breakpoints.down('md'));
   const isMdOrLess = useMediaQuery(theme.breakpoints.down('lg'));
 
+  // Resize Effect Listener
   useEffect(() => {
     const handleResize = () => {
       setHeight(window.innerHeight);
@@ -36,6 +41,67 @@ export const HomeScreen = () => {
 
     return () => {
       window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // Scroll Effect Listener
+  useEffect(() => {
+    const scrollListener = () => {
+      let screenSize = window.innerHeight;
+
+      if (refSellImage.current) {
+        if (refSellImage.current.getBoundingClientRect().top < screenSize) {
+          refSellImage.current.classList.add('visible');
+        } else {
+          refSellImage.current.classList.remove('visible');
+        }
+      }
+
+      if (refSellDescription.current) {
+        if (
+          refSellDescription.current.getBoundingClientRect().top < screenSize
+        ) {
+          refSellDescription.current.classList.add('visible');
+        } else {
+          refSellDescription.current.classList.remove('visible');
+        }
+      }
+
+      if (refRoyaltiesTitle.current) {
+        if (
+          refRoyaltiesTitle.current.getBoundingClientRect().top < screenSize
+        ) {
+          refRoyaltiesTitle.current.classList.add('visible');
+        } else {
+          refRoyaltiesTitle.current.classList.remove('visible');
+        }
+      }
+
+      if (refRoyaltiesSubtitle.current) {
+        if (
+          refRoyaltiesSubtitle.current.getBoundingClientRect().top < screenSize
+        ) {
+          refRoyaltiesSubtitle.current.classList.add('visible');
+        } else {
+          refRoyaltiesSubtitle.current.classList.remove('visible');
+        }
+      }
+
+      if (refRoyaltiesCards.current) {
+        if (
+          refRoyaltiesCards.current.getBoundingClientRect().top < screenSize
+        ) {
+          refRoyaltiesCards.current.classList.add('visible');
+        } else {
+          refRoyaltiesCards.current.classList.remove('visible');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', scrollListener);
+
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
     };
   }, []);
 
@@ -140,6 +206,8 @@ export const HomeScreen = () => {
               order={{ xs: 2, md: 1 }}
             >
               <Box
+                ref={refSellImage}
+                className="fadeLeft"
                 component="img"
                 sx={{
                   maxHeight: { xs: 250, md: 350 },
@@ -155,6 +223,8 @@ export const HomeScreen = () => {
               xs={12}
               md={5}
               order={{ xs: 1, md: 2 }}
+              ref={refSellDescription}
+              className="fadeRight"
               sx={{
                 marginLeft: { xs: 1, md: 0 },
                 marginRight: { xs: 1, md: 0 },
@@ -202,6 +272,8 @@ export const HomeScreen = () => {
             }}
           >
             <Typography
+              ref={refRoyaltiesTitle}
+              className="fadeLeft"
               color="white"
               align={isSmOrLess ? 'center' : 'inherit'}
               style={{ letterSpacing: 4 }}
@@ -211,6 +283,8 @@ export const HomeScreen = () => {
               Earn royalites from NFT sales.
             </Typography>
             <Typography
+              ref={refRoyaltiesSubtitle}
+              className="fadeRight"
               color="white"
               align={isSmOrLess ? 'center' : 'inherit'}
               variant={isSmOrLess ? 'body1' : 'h6'}
@@ -223,6 +297,8 @@ export const HomeScreen = () => {
               container
               display="flex"
               justifyContent="space-evenly"
+              ref={refRoyaltiesCards}
+              className="fadeTop"
               sx={{ marginTop: 10 }}
             >
               {/* Buy Newone NFT */}

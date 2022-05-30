@@ -11,8 +11,11 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import EmailIcon from '@mui/icons-material/Email';
+import { useNavigate } from 'react-router';
 
 export const Footer = () => {
+  const navigate = useNavigate();
+
   const theme = useTheme();
   const isSmOrLess = useMediaQuery(theme.breakpoints.down('md'));
   const isMdOrLess = useMediaQuery(theme.breakpoints.down('lg'));
@@ -86,7 +89,7 @@ export const Footer = () => {
           <Link
             href="#"
             underline="hover"
-            onClick={() => console.log('development')}
+            onClick={() => navigate('/development')}
             color="darkgray"
           >
             <Typography textAlign={isSmOrLess ? 'center' : 'unset'}>

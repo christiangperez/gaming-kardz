@@ -11,3 +11,17 @@ export interface INFTItem {
   price: number;
   onSale: boolean;
 }
+
+export interface IJsonCollection {
+  beneficiary: string;
+  nfts: Nft[];
+}
+
+export interface Nft {
+  image: string;
+  price: string;
+  name: string;
+  team: string;
+  game: string;
+  description: string;
+}

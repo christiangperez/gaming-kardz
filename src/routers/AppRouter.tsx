@@ -17,7 +17,7 @@ import { Navbar } from '../features/nav/Navbar';
 import { MarketplaceScreen } from '../features/marketplace/pages/MarketplaceScreen';
 import { MyNFTsScreen } from '../features/marketplace/pages/MyNFTsScreen';
 import { IRootState } from '../redux/store/store';
-import { MintProvisional } from '../features/marketplace/pages/MintProvisional';
+import { MintScreen } from '../features/marketplace/pages/MintScreen';
 import { AboutScreen } from '../features/home/pages/AboutScreen';
 import {
   getContractOwner,
@@ -28,6 +28,7 @@ import { NFTDetailScreen } from '../features/marketplace/pages/NFTDetailScreen';
 import { HomeScreen } from '../features/home/pages/HomeScreen';
 import { ConnectWalletScreen } from '../features/home/pages/ConnectWalletScreen';
 import { NotFoundScreen } from '../features/home/pages/NotFoundScreen';
+import { DevelopmentScreen } from '../features/home/pages/DevelopmentScreen';
 
 export const AppRouter = () => {
   const dispatch = useDispatch();
@@ -177,33 +178,36 @@ export const AppRouter = () => {
   }, [marketplaceContract]);
 
   return (
-    <Router>
-      <Navbar web3Handler={web3Handler} account={account} isOwner={isOwner} />
+    <div className="element">
+      <Router>
+        <Navbar web3Handler={web3Handler} account={account} isOwner={isOwner} />
 
-      <Routes>
-        <Route path="/home" element={<HomeScreen />} />
+        <Routes>
+          <Route path="/home" element={<HomeScreen />} />
 
-        {!loading ? (
-          <>
-            <Route path="/mint" element={<MintProvisional />} />
-            <Route path="/market" element={<MarketplaceScreen />} />
-            <Route path="/mynfts" element={<MyNFTsScreen />} />
-            <Route path="/nft/:idNft" element={<NFTDetailScreen />} />
-          </>
-        ) : (
-          <>
-            <Route path="/mint" element={<ConnectWalletScreen />} />
-            <Route path="/market" element={<ConnectWalletScreen />} />
-            <Route path="/mynfts" element={<ConnectWalletScreen />} />
-            <Route path="/nft/:idNft" element={<ConnectWalletScreen />} />
-          </>
-        )}
+          {!loading ? (
+            <>
+              <Route path="/mint" element={<MintScreen />} />
+              <Route path="/market" element={<MarketplaceScreen />} />
+              <Route path="/mynfts" element={<MyNFTsScreen />} />
+              <Route path="/nft/:idNft" element={<NFTDetailScreen />} />
+            </>
+          ) : (
+            <>
+              <Route path="/mint" element={<ConnectWalletScreen />} />
+              <Route path="/market" element={<ConnectWalletScreen />} />
+              <Route path="/mynfts" element={<ConnectWalletScreen />} />
+              <Route path="/nft/:idNft" element={<ConnectWalletScreen />} />
+            </>
+          )}
 
-        <Route path="/about" element={<AboutScreen />} />
+          <Route path="/about" element={<AboutScreen />} />
+          <Route path="/development" element={<DevelopmentScreen />} />
 
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="*" element={<NotFoundScreen />} />
-      </Routes>
-    </Router>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="*" element={<NotFoundScreen />} />
+        </Routes>
+      </Router>
+    </div>
   );
 };
