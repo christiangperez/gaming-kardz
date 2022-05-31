@@ -15,6 +15,7 @@ import PaidIcon from '@mui/icons-material/Paid';
 import { StepsCard } from '../components/StepsCard';
 import { Footer } from '../components/Footer';
 import './Home.css';
+import { mainTheme } from '../../../common/mainTheme';
 
 export const HomeScreen = () => {
   const navigate = useNavigate();
@@ -110,7 +111,7 @@ export const HomeScreen = () => {
       <Container
         maxWidth="xl"
         style={{
-          background: 'linear-gradient(to right bottom, #0c1410, #192112)',
+          background: `linear-gradient(to right bottom, #0c1410, ${mainTheme.secondaryColor})`,
         }}
       >
         {/* Explore Section */}
@@ -129,7 +130,7 @@ export const HomeScreen = () => {
             sx={{ marginLeft: { xs: 1, md: 0 }, marginRight: { xs: 1, md: 0 } }}
           >
             <Typography
-              color="white"
+              color={mainTheme.textColor}
               align={isSmOrLess ? 'center' : 'inherit'}
               style={{ letterSpacing: 4 }}
               variant={isSmOrLess ? 'h4' : 'h2'}
@@ -138,7 +139,7 @@ export const HomeScreen = () => {
               Buy NFTs of your favorites players.
             </Typography>
             <Typography
-              color="white"
+              color={mainTheme.textColor}
               align={isSmOrLess ? 'center' : 'inherit'}
               variant={isSmOrLess ? 'body1' : 'h6'}
               sx={{ marginTop: 3 }}
@@ -146,7 +147,7 @@ export const HomeScreen = () => {
               Find all players in the world and buy the player that you want.
             </Typography>
             <Typography
-              color="white"
+              color={mainTheme.textColor}
               align={isSmOrLess ? 'center' : 'inherit'}
               variant={isSmOrLess ? 'body1' : 'h6'}
               sx={{ marginTop: 3 }}
@@ -231,7 +232,7 @@ export const HomeScreen = () => {
               }}
             >
               <Typography
-                color="white"
+                color={mainTheme.textColor}
                 align={isSmOrLess ? 'center' : 'inherit'}
                 style={{ letterSpacing: 4 }}
                 variant={isSmOrLess ? 'h4' : 'h3'}
@@ -240,7 +241,7 @@ export const HomeScreen = () => {
                 Sell your NFTs and make huge profits.
               </Typography>
               <Typography
-                color="white"
+                color={mainTheme.textColor}
                 align={isSmOrLess ? 'center' : 'inherit'}
                 variant={isSmOrLess ? 'body1' : 'h6'}
                 sx={{ marginTop: 3 }}
@@ -248,7 +249,7 @@ export const HomeScreen = () => {
                 Speculate and sell your NFT when your player is in a big moment.
               </Typography>
               <Typography
-                color="white"
+                color={mainTheme.textColor}
                 align={isSmOrLess ? 'center' : 'inherit'}
                 variant={isSmOrLess ? 'body1' : 'h6'}
                 sx={{ marginTop: 3 }}
@@ -274,7 +275,7 @@ export const HomeScreen = () => {
             <Typography
               ref={refRoyaltiesTitle}
               className="fadeLeft"
-              color="white"
+              color={mainTheme.textColor}
               align={isSmOrLess ? 'center' : 'inherit'}
               style={{ letterSpacing: 4 }}
               variant={isSmOrLess ? 'h4' : 'h3'}
@@ -285,7 +286,7 @@ export const HomeScreen = () => {
             <Typography
               ref={refRoyaltiesSubtitle}
               className="fadeRight"
-              color="white"
+              color={mainTheme.textColor}
               align={isSmOrLess ? 'center' : 'inherit'}
               variant={isSmOrLess ? 'body1' : 'h6'}
               sx={{ marginTop: 2 }}
@@ -304,20 +305,30 @@ export const HomeScreen = () => {
               {/* Buy Newone NFT */}
               <StepsCard
                 imageIcon={
-                  <ShoppingCartIcon sx={{ color: '#d0f177', fontSize: 96 }} />
+                  <ShoppingCartIcon
+                    sx={{ color: mainTheme.primaryColor, fontSize: 96 }}
+                  />
                 }
                 description="BUY NEWONE NFT"
               />
 
               {/* Sell NFT */}
               <StepsCard
-                imageIcon={<SellIcon sx={{ color: '#d0f177', fontSize: 96 }} />}
+                imageIcon={
+                  <SellIcon
+                    sx={{ color: mainTheme.primaryColor, fontSize: 96 }}
+                  />
+                }
                 description="SELL NFT"
               />
 
               {/* Earn Royalties */}
               <StepsCard
-                imageIcon={<PaidIcon sx={{ color: '#d0f177', fontSize: 96 }} />}
+                imageIcon={
+                  <PaidIcon
+                    sx={{ color: mainTheme.primaryColor, fontSize: 96 }}
+                  />
+                }
                 description="EARN ROYALTIES"
               />
             </Grid>

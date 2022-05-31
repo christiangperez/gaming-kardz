@@ -1,8 +1,9 @@
 import { Container, Typography, Grid } from '@mui/material';
+import { mainTheme } from '../../../common/mainTheme';
 
 export const ConnectWalletScreen = () => {
   return (
-    <Container maxWidth="xl" sx={{ background: '#0c1410' }}>
+    <Container maxWidth="xl" sx={{ background: mainTheme.fourthColor }}>
       <Grid container sx={{ height: '90vh' }}>
         <Grid
           item
@@ -12,7 +13,7 @@ export const ConnectWalletScreen = () => {
           alignItems="center"
         >
           <Typography
-            color="white"
+            color={mainTheme.textColor}
             sx={{ marginRight: 5 }}
             variant="h2"
             textAlign="center"

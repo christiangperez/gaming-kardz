@@ -1,7 +1,7 @@
 export interface INFTItem {
   totalPrice: number;
   latestPrice: number;
-  itemId: number;
+  tokenId: number;
   name: string;
   team: string;
   game: string;

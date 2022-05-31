@@ -19,19 +19,19 @@ export const loadMarketplaceItems = () => {
         const item = await marketplaceContract.items(i);
         if (item.onSale && item.seller.toLowerCase() !== account) {
           // get uri url from nft contract
-          const uri = await nftContract.tokenURI(item.itemId);
+          const uri = await nftContract.tokenURI(item.tokenId);
           // use uri to fetch the nft metadata stored on ipfs
           const response = await fetch(uri);
           const metadata = await response.json();
           // get total price of item (item price + fee)
           const totalPrice = await marketplaceContract.getTotalPrice(
-            item.itemId
+            item.tokenId
           );
 
           items.push({
             totalPrice,
             latestPrice: item.latestPrice,
-            itemId: item.itemId,
+            tokenId: item.tokenId,
             name: metadata.name,
             team: metadata.team,
             game: metadata.game,
@@ -74,12 +74,12 @@ export const loadMyNFTsItems = () => {
           const response = await fetch(uri);
           const metadata = await response.json();
           // get total price of item (item price + fee)
-          const totalPrice = await marketplaceContract.getTotalPrice(i.itemId);
+          const totalPrice = await marketplaceContract.getTotalPrice(i.tokenId);
 
           let item = {
             totalPrice,
             latestPrice: i.latestPrice,
-            itemId: i.itemId,
+            tokenId: i.tokenId,
             name: metadata.name,
             team: metadata.team,
             game: metadata.game,
@@ -113,7 +113,7 @@ export const purchaseMarketplaceItem = (item: INFTItem) => {
       const { marketplaceContract, enqueueSnackbar } = getState().market;
 
       await (
-        await marketplaceContract.purchaseItem(item.itemId, {
+        await marketplaceContract.purchaseItem(item.tokenId, {
           value: item.totalPrice,
         })
       ).wait();
@@ -141,7 +141,7 @@ export const setItemOnSale = (item: INFTItem, price: any) => {
       if (price) {
         await (
           await marketplaceContract.setItemOnSale(
-            item.itemId,
+            item.tokenId,
             ethers.utils.parseEther(String(price))
           )
         ).wait();
@@ -183,14 +183,14 @@ export const getContractOwner = () => {
   };
 };
 
-export const getNFTItem = (itemId: any) => {
+export const getNFTItem = (tokenId: any) => {
   return async (dispatch: Dispatch<MarketTypes>, getState: any) => {
     try {
       dispatch({ type: 'loadingActiveNFT', payload: true });
 
       const { nftContract, marketplaceContract } = getState().market;
 
-      const i = await marketplaceContract.items(itemId);
+      const i = await marketplaceContract.items(tokenId);
 
       // get uri url from nft contract
       const uri = await nftContract.tokenURI(i.tokenId);
@@ -198,12 +198,12 @@ export const getNFTItem = (itemId: any) => {
       const response = await fetch(uri);
       const metadata = await response.json();
       // get total price of item (item price + fee)
-      const totalPrice = await marketplaceContract.getTotalPrice(i.itemId);
+      const totalPrice = await marketplaceContract.getTotalPrice(i.tokenId);
 
       let item: INFTItem = {
         totalPrice,
         latestPrice: i.latestPrice,
-        itemId: i.itemId,
+        tokenId: i.tokenId,
         name: metadata.name,
         team: metadata.team,
         game: metadata.game,
@@ -227,15 +227,15 @@ export const getNFTItem = (itemId: any) => {
   };
 };
 
-export const loadNFTTransactions = (itemId: number) => {
+export const loadNFTTransactions = (tokenId: number) => {
   return async (dispatch: Dispatch<MarketTypes>, getState: any) => {
     try {
-      // dispatch({ type: 'loadingMyNFTsItems', payload: true });
+      dispatch({ type: 'loadingNFTTransactions', payload: true });
 
-      const { nftContract, marketplaceContract, account } = getState().market;
+      const { marketplaceContract } = getState().market;
 
       const filter = marketplaceContract.filters.Bought(
-        itemId,
+        tokenId,
         null,
         null,
         null,
@@ -253,7 +253,7 @@ export const loadNFTTransactions = (itemId: number) => {
           let purchasedItem = {
             totalPrice: args.totalPrice,
             price: args.price,
-            itemId: args.itemId,
+            tokenId: args.tokenId,
             seller: args.seller,
             buyer: args.buyer,
           };
@@ -263,12 +263,12 @@ export const loadNFTTransactions = (itemId: number) => {
       );
 
       dispatch({ type: 'setNFTTransactions', payload: purchases });
-      // dispatch({ type: 'loadingMyNFTsItems', payload: false });
+      dispatch({ type: 'loadingNFTTransactions', payload: false });
     } catch (error) {
       const { enqueueSnackbar } = getState().market;
 
       console.log('Exception error: ' + error, 'Exception');
-      dispatch({ type: 'loadingMyNFTsItems', payload: false });
+      dispatch({ type: 'loadingNFTTransactions', payload: false });
       enqueueSnackbar('Exception error: ' + error, { variant: 'error' });
     }
   };

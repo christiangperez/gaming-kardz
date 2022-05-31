@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { Typography, Grid, Box, useTheme, useMediaQuery } from '@mui/material';
+import { mainTheme } from '../../../common/mainTheme';
 
 interface IProps {
   imageIcon: ReactNode;
@@ -25,14 +26,14 @@ export const StepsCard = ({ imageIcon, description }: IProps) => {
         borderColor="#d0f177"
         sx={{ borderRadius: '24px', paddingTop: 2, paddingBottom: 2 }}
         style={{
-          background: 'linear-gradient(to right bottom, #192112, #5e7b37)',
+          background: `linear-gradient(to right bottom, ${mainTheme.secondaryColor}, ${mainTheme.terciaryColor})`,
         }}
       >
         <Grid item display="flex" justifyContent="center" alignItems="center">
           {imageIcon}
         </Grid>
         <Typography
-          color="white"
+          color={mainTheme.textColor}
           fontWeight="bold"
           align={isSmOrLess ? 'center' : 'inherit'}
           variant={isSmOrLess ? 'body1' : 'h6'}

@@ -8,6 +8,7 @@ import addCollection from '../../../addCollectionAstralisNavi.json';
 import collectionExample from '../../../collectionExample.json';
 import { IJsonCollection } from '../../../interfaces/marketplaceInterfaces';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import { mainTheme } from '../../../common/mainTheme';
 
 export const MintScreen = () => {
   const { nftContract, marketplaceContract, enqueueSnackbar } = useSelector(
@@ -158,15 +159,19 @@ export const MintScreen = () => {
         maxWidth="xl"
         sx={{ paddingTop: 4 }}
         style={{
-          background: 'linear-gradient(to right bottom, #0c1410, #192112)',
+          background: `linear-gradient(to right bottom, #0c1410, ${mainTheme.secondaryColor})`,
         }}
       >
         <Grid display="flex" justifyContent="center">
           <Grid>
-            <Typography color="white" variant="subtitle1" textAlign="center">
+            <Typography
+              color={mainTheme.textColor}
+              variant="subtitle1"
+              textAlign="center"
+            >
               Mint
             </Typography>
-            <Typography color="white" variant="h2">
+            <Typography color={mainTheme.textColor} variant="h2">
               Minting Collection
             </Typography>
           </Grid>
@@ -179,11 +184,11 @@ export const MintScreen = () => {
           alignItems="center"
           sx={{ marginTop: 5 }}
         >
-          <Typography color="white">
+          <Typography color={mainTheme.textColor}>
             Use this button to upload your NFT Images to IPFS and get the URI to
             create your JSON Collection file.
           </Typography>
-          <Typography color="white">
+          <Typography color={mainTheme.textColor}>
             Once you upload your NFT Image, copy your URI and continue uploading
             all NFT Images and saving the URIs to create the JSON file with all
             data.
@@ -215,12 +220,12 @@ export const MintScreen = () => {
               },
               '& .MuiOutlinedInput-root.Mui-focused': {
                 '& > fieldset': {
-                  borderColor: 'primary',
+                  borderColor: mainTheme.primaryColor,
                 },
               },
               '& .MuiOutlinedInput-root:hover': {
                 '& > fieldset': {
-                  borderColor: 'primary.main',
+                  borderColor: mainTheme.primaryColor,
                 },
               },
             }}
@@ -231,7 +236,7 @@ export const MintScreen = () => {
           </Button>
         </Grid>
       </Container>
-      <Grid container sx={{ pt: 0, pb: 2, background: '#d0f177' }}>
+      <Grid container sx={{ pt: 0, pb: 2, background: mainTheme.primaryColor }}>
         <Container>
           <Typography variant="h6" sx={{ marginTop: 4 }}>
             JSON File Example
@@ -241,12 +246,7 @@ export const MintScreen = () => {
           </Typography>
         </Container>
       </Grid>
-      <Container
-        maxWidth="xl"
-        style={{
-          background: 'linear-gradient(to right bottom, #0c1410, #192112)',
-        }}
-      >
+      <Container maxWidth="xl">
         <Grid display="flex" justifyContent="center">
           <Button
             variant="outlined"

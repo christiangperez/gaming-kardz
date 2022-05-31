@@ -14,13 +14,16 @@ import { ethers } from 'ethers';
 import { useSelector } from 'react-redux';
 import { IRootState } from '../../../redux/store/store';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
+import { mainTheme } from '../../../common/mainTheme';
 
 export const NFTTransactions = () => {
   const { nftTransactions } = useSelector((state: IRootState) => state.market);
 
   return (
     <>
-      <Grid sx={{ background: '#d0f177', marginTop: 5, pt: 2, pb: 2 }}>
+      <Grid
+        sx={{ background: mainTheme.primaryColor, marginTop: 5, pt: 2, pb: 2 }}
+      >
         <Container>
           <Typography variant="h6">Token Transactions</Typography>
         </Container>
@@ -29,7 +32,7 @@ export const NFTTransactions = () => {
         <TableContainer
           component={Paper}
           style={{
-            background: 'linear-gradient(to right bottom, #5e7b37, #192112)',
+            background: `linear-gradient(to right bottom, ${mainTheme.terciaryColor}, ${mainTheme.secondaryColor})`,
           }}
         >
           <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -83,11 +86,11 @@ export const NFTTransactions = () => {
                   </TableCell>
                   <TableCell sx={{ color: 'white' }} align="right">
                     <img
-                      src="../../assets/ether-gold.png"
+                      src="../../assets/ethereum-icon.png"
                       alt="logo"
-                      width={12}
-                      height={12}
-                      style={{ marginRight: 2 }}
+                      width={10}
+                      height={14}
+                      style={{ marginRight: 4 }}
                     />
                     {ethers.utils.formatEther(item.totalPrice)}
                   </TableCell>

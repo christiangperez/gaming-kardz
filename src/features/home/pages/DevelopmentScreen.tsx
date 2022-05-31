@@ -1,14 +1,23 @@
 import { Container, Typography, Grid, Paper } from '@mui/material';
+import { mainTheme } from '../../../common/mainTheme';
 
 export const DevelopmentScreen = () => {
   return (
     <Container maxWidth="xl" sx={{ paddingTop: 2 }}>
       <Grid display="flex" justifyContent="center">
         <Grid>
-          <Typography color="primary" variant="subtitle1" textAlign="center">
+          <Typography
+            color={mainTheme.primaryColor}
+            variant="subtitle1"
+            textAlign="center"
+          >
             Development
           </Typography>
-          <Typography color="white" variant="h4" sx={{ letterSpacing: -0.2 }}>
+          <Typography
+            color={mainTheme.textColor}
+            variant="h4"
+            sx={{ letterSpacing: -0.2 }}
+          >
             HOW GAMING KARDZ IS BUILT
           </Typography>
         </Grid>
@@ -19,7 +28,7 @@ export const DevelopmentScreen = () => {
         md={4}
         sx={{ paddingLeft: 2, paddingRight: 2, marginTop: 5 }}
       >
-        <Paper sx={{ padding: 2, backgroundColor: 'primary.main' }}>
+        <Paper sx={{ padding: 2, backgroundColor: mainTheme.primaryColor }}>
           <Typography variant="subtitle1" fontWeight="bold">
             This App was created with tecnologies above
           </Typography>

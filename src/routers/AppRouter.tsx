@@ -29,8 +29,6 @@ import { HomeScreen } from '../features/home/pages/HomeScreen';
 import { ConnectWalletScreen } from '../features/home/pages/ConnectWalletScreen';
 import { NotFoundScreen } from '../features/home/pages/NotFoundScreen';
 import { DevelopmentScreen } from '../features/home/pages/DevelopmentScreen';
-import { useSnackbar } from 'notistack';
-import TestComponent from '../features/marketplace/pages/TestComponent';
 
 export const AppRouter = () => {
   const dispatch = useDispatch();

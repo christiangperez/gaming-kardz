@@ -11,6 +11,7 @@ export type MarketTypes =
   | { type: 'loadingPurchaseItem'; payload: boolean }
   | { type: 'loadingSetItemOnSale'; payload: boolean }
   | { type: 'loadingActiveNFT'; payload: boolean }
+  | { type: 'loadingNFTTransactions'; payload: boolean }
   | { type: 'setIsOwner'; payload: boolean }
   | { type: 'hideSnackbarTransactionResult' }
   | {

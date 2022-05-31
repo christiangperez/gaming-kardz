@@ -21,6 +21,7 @@ interface IStateMarket {
   loadingPurchaseItem: boolean;
   loadingSetItemOnSale: boolean;
   loadingActiveNFT: boolean;
+  loadingNFTTransactions: boolean;
   enqueueSnackbar?: (
     message: SnackbarMessage,
     options?: OptionsObject | undefined
@@ -44,6 +45,7 @@ const initialState: IStateMarket = {
   loadingPurchaseItem: false,
   loadingSetItemOnSale: false,
   loadingActiveNFT: false,
+  loadingNFTTransactions: false,
   enqueueSnackbar: undefined,
 };
 
@@ -105,6 +107,12 @@ export const marketReducer = (
       return {
         ...state,
         loadingActiveNFT: action.payload,
+      };
+
+    case 'loadingNFTTransactions':
+      return {
+        ...state,
+        loadingNFTTransactions: action.payload,
       };
 
     case 'setIsOwner':

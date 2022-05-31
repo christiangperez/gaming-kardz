@@ -478,8 +478,8 @@
       ]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/src/solidity/contracts/Marketplace.sol": {
-      "lastModificationDate": 1653951929204,
-      "contentHash": "3f7c954773a49a91b237d66ac8e4045d",
+      "lastModificationDate": 1653999486084,
+      "contentHash": "d9d22fd667a459aa9c514e909ce69708",
       "sourceName": "src/solidity/contracts/Marketplace.sol",
       "solcConfig": {
         "version": "0.8.4",

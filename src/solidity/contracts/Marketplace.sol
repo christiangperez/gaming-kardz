@@ -21,9 +21,8 @@ contract Marketplace is ReentrancyGuard {
     }
 
     struct Item {
-        uint itemId;
-        IERC721Extend nft;
         uint tokenId;
+        IERC721Extend nft;
         uint price;
         uint latestPrice;
         address payable seller;
@@ -31,17 +30,15 @@ contract Marketplace is ReentrancyGuard {
     }
 
     event Offered(
-        uint itemId,
-        address indexed nft,
         uint tokenId,
+        address indexed nft,
         uint price,
         address indexed seller
     );
 
     event Bought (
-        uint indexed itemId,
+        uint indexed tokenId,
         address nft,
-        uint tokenId,
         uint price,
         uint totalPrice,
         address indexed seller,
@@ -91,7 +88,6 @@ contract Marketplace is ReentrancyGuard {
             items[itemCount] = Item(
                 itemCount,
                 _erc721,
-                tokenCount - _prices.length + i + 1,
                 _prices[i],
                 0,
                 payable(msg.sender),
@@ -101,37 +97,36 @@ contract Marketplace is ReentrancyGuard {
             emit Offered(
                 itemCount,
                 address(_nft),
-                tokenCount - _prices.length + i + 1,
                 _prices[i],
                 msg.sender
             );
         }
     }
 
-    function purchaseItem(uint _itemId) external payable nonReentrant {
-        require(_itemId > 0 && _itemId <= itemCount, "item doesn't exists");
-        uint _totalPrice = getTotalPrice(_itemId);
-        Item storage item = items[_itemId];
+    function purchaseItem(uint _tokenId) external payable nonReentrant {
+        require(_tokenId > 0 && _tokenId <= itemCount, "item doesn't exists");
+        uint _totalPrice = getTotalPrice(_tokenId);
+        Item storage item = items[_tokenId];
         require(msg.value >= _totalPrice, 'not enogh ether to cover item price and market fees');
         // pay seller and feeAccount
         item.seller.transfer(item.price);
 
-        feeAccount.transfer(getTotalFeeAccount(_itemId));
+        feeAccount.transfer(getTotalFeeAccount(_tokenId));
         
-        items[_itemId].latestPrice = getTotalPrice(_itemId);
+        items[_tokenId].latestPrice = getTotalPrice(_tokenId);
 
-        uint256 totalFeeCollection = getTotalFeeCollection(_itemId);
-        address collectionOwner =  items[_itemId].nft.getCollectionOwner(item.tokenId);
+        uint256 totalFeeCollection = getTotalFeeCollection(_tokenId);
+        address collectionOwner =  items[_tokenId].nft.getCollectionOwner(item.tokenId);
         if (totalFeeCollection > 0 && collectionOwner != address(0)) {
-            payable(collectionOwner).transfer(getTotalFeeCollection(_itemId));
+            payable(collectionOwner).transfer(getTotalFeeCollection(_tokenId));
         }
         
 
         address royaltyBeneficiary = item.nft.getRoyaltiesBeneficiary(item.tokenId);
-        uint256 totalFeeRoyalties = getTotalFeeRoyalties(_itemId);
+        uint256 totalFeeRoyalties = getTotalFeeRoyalties(_tokenId);
         // if beneficiary is empty, set sender to royalties beneficiary
         if (royaltyBeneficiary == address(0)) {
-            items[_itemId].nft.setRoyaltiesBeneficiary(item.tokenId, msg.sender);
+            items[_tokenId].nft.setRoyaltiesBeneficiary(item.tokenId, msg.sender);
         } else if (totalFeeRoyalties > 0) {
             // pay royalties to royalty beneficiary
             payable(royaltyBeneficiary).transfer(totalFeeRoyalties);
@@ -142,85 +137,84 @@ contract Marketplace is ReentrancyGuard {
 
 
         emit Bought (
-            _itemId,
+            _tokenId,
             address(item.nft),
-            item.tokenId,
             item.price,
-            getTotalPrice(_itemId),
+            getTotalPrice(_tokenId),
             item.seller,
             msg.sender
         );
 
-        items[_itemId].seller = payable(msg.sender);
-        items[_itemId].onSale = false;
+        items[_tokenId].seller = payable(msg.sender);
+        items[_tokenId].onSale = false;
 
     }
 
-    function setItemOnSale(uint _itemId, uint _price) external nonReentrant {
-        require(items[_itemId].seller == msg.sender, "you can't set on sale items of another owners");
+    function setItemOnSale(uint _tokenId, uint _price) external nonReentrant {
+        require(items[_tokenId].seller == msg.sender, "you can't set on sale items of another owners");
         require(_price > 0, 'Price must be greater than zero');  
-        items[_itemId].price = _price;
-        items[_itemId].onSale = true;
+        items[_tokenId].price = _price;
+        items[_tokenId].onSale = true;
 
         emit ItemOnSale (
-            _itemId,
-            items[_itemId].tokenId,
-            items[_itemId].price,
+            _tokenId,
+            items[_tokenId].tokenId,
+            items[_tokenId].price,
             msg.sender
         );
     }
 
-    function getTotalPrice(uint _itemId) public view returns (uint) {
-        Item memory item = items[_itemId];
-        uint256 tokenId = items[_itemId].tokenId;
+    function getTotalPrice(uint _tokenId) public view returns (uint) {
+        Item memory item = items[_tokenId];
+        uint256 tokenId = items[_tokenId].tokenId;
 
-        uint256 feeMarketPlace = (items[_itemId].price * (100 + feePercent) / 100) - items[_itemId].price;
+        uint256 feeMarketPlace = (items[_tokenId].price * (100 + feePercent) / 100) - items[_tokenId].price;
 
         uint256 feeCollection = 0;
         address collectionOwner = item.nft.getCollectionOwner(tokenId);
         if (collectionOwner != address(0)) {
-            feeCollection = (items[_itemId].price * (100 + feeCollectionPercent) / 100) - items[_itemId].price;
+            feeCollection = (items[_tokenId].price * (100 + feeCollectionPercent) / 100) - items[_tokenId].price;
         }
 
         uint256 feeRoyalties = 0;
         address royaltiesBeneficiary = item.nft.getRoyaltiesBeneficiary(tokenId);
         if (royaltiesBeneficiary != address(0)) {
-            feeRoyalties = (items[_itemId].price * (100 + feeRoyaltiesPercent) / 100) - items[_itemId].price;
+            feeRoyalties = (items[_tokenId].price * (100 + feeRoyaltiesPercent) / 100) - items[_tokenId].price;
         }
 
-        return items[_itemId].price + feeMarketPlace + feeCollection + feeRoyalties;
+        return items[_tokenId].price + feeMarketPlace + feeCollection + feeRoyalties;
     }
 
-    function getTotalFeeCollection(uint _itemId) public view returns (uint) {
-        Item memory item = items[_itemId];
-        uint256 tokenId = items[_itemId].tokenId;
+    function getTotalFeeCollection(uint _tokenId) public view returns (uint) {
+        Item memory item = items[_tokenId];
+        uint256 tokenId = items[_tokenId].tokenId;
 
         uint256 feeCollection = 0;
         address collectionOwner = item.nft.getCollectionOwner(tokenId);
         if (collectionOwner != address(0)) {
-            feeCollection = (items[_itemId].price * (100 + feeCollectionPercent) / 100) - items[_itemId].price;
+            feeCollection = (items[_tokenId].price * (100 + feeCollectionPercent) / 100) - items[_tokenId].price;
         }
 
         return feeCollection;
     }
 
-    function getTotalFeeRoyalties(uint _itemId) public view returns (uint) {
-        Item memory item = items[_itemId];
-        uint256 tokenId = items[_itemId].tokenId;
+    function getTotalFeeRoyalties(uint _tokenId) public view returns (uint) {
+        Item memory item = items[_tokenId];
+        uint256 tokenId = items[_tokenId].tokenId;
 
         uint256 feeRoyalties = 0;
         address royaltiesBeneficiary = item.nft.getRoyaltiesBeneficiary(tokenId);
         if (royaltiesBeneficiary != address(0)) {
-            feeRoyalties = (items[_itemId].price * (100 + feeRoyaltiesPercent) / 100) - items[_itemId].price;
+            feeRoyalties = (items[_tokenId].price * (100 + feeRoyaltiesPercent) / 100) - items[_tokenId].price;
         }
 
         return feeRoyalties;
     }
 
-    function getTotalFeeAccount(uint _itemId) public view returns (uint) {
+    function getTotalFeeAccount(uint _tokenId) public view returns (uint) {
         uint256 feeAccountAmount = 0;
         if (feeAccount != address(0)) {
-            feeAccountAmount = (items[_itemId].price * (100 + feePercent) / 100) - items[_itemId].price;
+            feeAccountAmount = (items[_tokenId].price * (100 + feePercent) / 100) - items[_tokenId].price;
         }
 
         return feeAccountAmount;

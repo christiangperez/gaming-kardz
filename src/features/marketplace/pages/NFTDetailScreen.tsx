@@ -27,6 +27,7 @@ import {
 import { IRootState } from '../../../redux/store/store';
 import { INFTItem } from '../../../interfaces/marketplaceInterfaces';
 import { NFTTransactions } from '../components/NFTTransactions';
+import { mainTheme } from '../../../common/mainTheme';
 
 export const NFTDetailScreen = () => {
   const dispatch = useDispatch();
@@ -128,7 +129,7 @@ export const NFTDetailScreen = () => {
 
   if (loadingActiveNFT) {
     return (
-      <Container maxWidth="xl" sx={{ background: '#0c1410' }}>
+      <Container maxWidth="xl">
         <Grid
           display="flex"
           justifyContent="center"
@@ -145,14 +146,14 @@ export const NFTDetailScreen = () => {
 
   if (!loadingActiveNFT && !activeNFT) {
     return (
-      <Container maxWidth="xl" sx={{ background: '#0c1410' }}>
+      <Container maxWidth="xl">
         <Grid
           display="flex"
           justifyContent="center"
           alignItems="center"
           sx={{ height: '90vh' }}
         >
-          <Typography color="white" variant="h6">
+          <Typography color={mainTheme.textColor} variant="h6">
             There is a problem. Invalid NFT ID.
           </Typography>
         </Grid>
@@ -179,21 +180,20 @@ export const NFTDetailScreen = () => {
                     p: 4,
                   }}
                   style={{
-                    background:
-                      'linear-gradient(to right bottom, #0c1410, #192112)',
+                    background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`,
                   }}
                 >
                   <Typography
                     id="modal-modal-title"
                     variant="h6"
                     component="h2"
-                    color="white"
+                    color={mainTheme.textColor}
                   >
                     Insert price to your NFT
                   </Typography>
                   <Typography
                     id="modal-modal-description"
-                    color="white"
+                    color={mainTheme.textColor}
                     sx={{ mt: 2 }}
                   >
                     Remember you can't change the price. When you put on sale
@@ -208,7 +208,7 @@ export const NFTDetailScreen = () => {
                     onChange={(p) => setPrice(p.target.value)}
                     sx={{ input: { color: 'white' }, marginTop: 4 }}
                     InputLabelProps={{
-                      style: { color: '#fff' },
+                      style: { color: mainTheme.textColor },
                     }}
                   />
                   <Button
@@ -242,8 +242,10 @@ export const NFTDetailScreen = () => {
                   sx={{ maxWidth: 400, ml: 2, mr: 2, mb: 4 }}
                   style={{
                     background: `linear-gradient(to right bottom, ${
-                      activeNFT.latestPrice > 0 ? '#5e7b37' : '#d0f177'
-                    }, #192112)`,
+                      activeNFT.latestPrice > 0
+                        ? mainTheme.terciaryColor
+                        : mainTheme.primaryColor
+                    }, ${mainTheme.secondaryColor})`,
                   }}
                 >
                   <CardActionArea onClick={handleClickOpenImage}>
@@ -264,8 +266,7 @@ export const NFTDetailScreen = () => {
                 md={8}
                 sx={{ borderRadius: 8, pt: 1, pb: 1, pl: 3, pr: 3 }}
                 style={{
-                  background:
-                    'linear-gradient(to right bottom, #5e7b37, #192112)',
+                  background: `linear-gradient(to right bottom, ${mainTheme.terciaryColor}, ${mainTheme.secondaryColor})`,
                 }}
               >
                 <Grid
@@ -275,7 +276,7 @@ export const NFTDetailScreen = () => {
                 >
                   <Typography
                     variant="h4"
-                    color="white"
+                    color={mainTheme.textColor}
                     display="inline"
                     fontWeight="bold"
                   >
@@ -284,10 +285,10 @@ export const NFTDetailScreen = () => {
                   <Typography
                     variant="h5"
                     display="inline"
-                    color="white"
+                    color={mainTheme.textColor}
                     sx={{ marginLeft: 1 }}
                   >
-                    {` #${String(activeNFT.itemId)}`}
+                    {` #${String(activeNFT.tokenId)}`}
                   </Typography>
                 </Grid>
                 {activeNFT.team && (
@@ -298,7 +299,11 @@ export const NFTDetailScreen = () => {
                       marginTop: 1,
                     }}
                   >
-                    <Typography variant="h5" color="white" fontWeight="600">
+                    <Typography
+                      variant="h5"
+                      color={mainTheme.textColor}
+                      fontWeight="600"
+                    >
                       {activeNFT.team}
                     </Typography>
                   </Grid>
@@ -311,43 +316,55 @@ export const NFTDetailScreen = () => {
                     marginBottom: 2,
                   }}
                 >
-                  <Typography variant="h5" color="white" fontWeight="600">
+                  <Typography
+                    variant="h5"
+                    color={mainTheme.textColor}
+                    fontWeight="600"
+                  >
                     {activeNFT.game}
                   </Typography>
                 </Grid>
                 {activeNFT.seller.toLowerCase() === account && (
                   <Grid display="flex" alignItems="center">
-                    <Typography variant="h6" color="white">
+                    <Typography variant="h6" color={mainTheme.textColor}>
                       Bought
                     </Typography>
                     <img
-                      src="../../assets/ether-gold.png"
+                      src="../../assets/ethereum-icon.png"
                       alt="logo"
-                      width={16}
-                      height={16}
+                      width={10}
+                      height={14}
                       style={{ marginLeft: 10, marginRight: 5 }}
                     />
-                    <Typography variant="h6" color="white" fontWeight="600">
+                    <Typography
+                      variant="h6"
+                      color={mainTheme.textColor}
+                      fontWeight="600"
+                    >
                       {ethers.utils.formatEther(activeNFT.latestPrice)}
                     </Typography>
                   </Grid>
                 )}
                 {activeNFT.onSale && (
                   <>
-                    <Typography variant="h6" color="white">
+                    <Typography variant="h6" color={mainTheme.textColor}>
                       {activeNFT.seller.toLowerCase() === account
                         ? 'ON SALE FOR'
                         : 'Price'}
                     </Typography>
                     <Grid display="flex" alignItems="center">
                       <img
-                        src="../../assets/ether-gold.png"
+                        src="../../assets/ethereum-icon.png"
                         alt="logo"
-                        width={16}
+                        width={12}
                         height={16}
                         style={{ marginRight: 5 }}
                       />
-                      <Typography variant="h6" color="white" fontWeight="600">
+                      <Typography
+                        variant="h6"
+                        color={mainTheme.textColor}
+                        fontWeight="600"
+                      >
                         {activeNFT.seller.toLowerCase() === account
                           ? ethers.utils.formatEther(activeNFT.price)
                           : ethers.utils.formatEther(activeNFT.totalPrice)}
@@ -356,7 +373,7 @@ export const NFTDetailScreen = () => {
                   </>
                 )}
                 <Grid sx={{ marginTop: 2, marginRight: 1 }}>
-                  <Typography variant="h6" color="white">
+                  <Typography variant="h6" color={mainTheme.textColor}>
                     {activeNFT.description}
                   </Typography>
                 </Grid>

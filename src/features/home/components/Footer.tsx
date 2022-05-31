@@ -12,6 +12,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import EmailIcon from '@mui/icons-material/Email';
 import { useNavigate } from 'react-router';
+import { mainTheme } from '../../../common/mainTheme';
 
 export const Footer = () => {
   const navigate = useNavigate();
@@ -80,7 +81,7 @@ export const Footer = () => {
           sx={{ marginLeft: 'auto', marginBottom: { xs: 5, md: 0 } }}
         >
           <Typography
-            color="white"
+            color={mainTheme.textColor}
             textAlign={isSmOrLess ? 'center' : 'unset'}
             sx={{ marginBottom: { xs: 1, md: 3 } }}
           >
@@ -106,14 +107,14 @@ export const Footer = () => {
           sx={{ marginRight: 'auto', marginBottom: { xs: 5, md: 0 } }}
         >
           <Typography
-            color="white"
+            color={mainTheme.textColor}
             sx={{ marginBottom: { xs: 1, md: 3 } }}
             textAlign={isSmOrLess ? 'center' : 'unset'}
           >
             Contact
           </Typography>
           <Link
-            color="white"
+            color={mainTheme.textColor}
             underline="none"
             href="mailto:christiangperez@gmail.com"
             variant="body2"
@@ -141,7 +142,11 @@ export const Footer = () => {
         xs={12}
       >
         <hr />
-        <Typography color="white" textAlign="center" sx={{ paddingTop: 2 }}>
+        <Typography
+          color={mainTheme.textColor}
+          textAlign="center"
+          sx={{ paddingTop: 2 }}
+        >
           © Gaming Kardz 2022. All Rights Reserved.
         </Typography>
       </Grid>

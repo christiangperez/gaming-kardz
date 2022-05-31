@@ -24,6 +24,7 @@ import {
 import { INFTItem } from '../../../interfaces/marketplaceInterfaces';
 import { useNavigate } from 'react-router';
 import { MyNFTCard } from '../components/MyNFTCard';
+import { mainTheme } from '../../../common/mainTheme';
 
 export const MyNFTsScreen = () => {
   const navigate = useNavigate();
@@ -62,7 +63,7 @@ export const MyNFTsScreen = () => {
   };
 
   const handleClickCard = (item: INFTItem) => {
-    navigate(`/nft/${item.itemId}`);
+    navigate(`/nft/${item.tokenId}`);
   };
 
   useEffect(() => {
@@ -73,7 +74,7 @@ export const MyNFTsScreen = () => {
 
   if (loadingMyNFTsItems) {
     return (
-      <Container maxWidth="xl" sx={{ background: '#0c1410' }}>
+      <Container maxWidth="xl">
         <Grid
           display="flex"
           justifyContent="center"
@@ -89,15 +90,15 @@ export const MyNFTsScreen = () => {
   }
 
   return (
-    <Container maxWidth="xl" sx={{ background: '#0c1410', paddingTop: 2 }}>
+    <Container maxWidth="xl" sx={{ paddingTop: 2 }}>
       {myNFTsItems.length > 0 ? (
         <>
           <Grid display="flex" justifyContent="center">
             <Grid>
-              <Typography color="white" variant="h2">
+              <Typography color={mainTheme.textColor} variant="h2">
                 My NFTs
               </Typography>
-              <Typography color="white" variant="subtitle1">
+              <Typography color={mainTheme.textColor} variant="subtitle1">
                 Increase your collection buying more
               </Typography>
             </Grid>
@@ -120,21 +121,20 @@ export const MyNFTsScreen = () => {
                   p: 4,
                 }}
                 style={{
-                  background:
-                    'linear-gradient(to right bottom, #0c1410, #192112)',
+                  background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`,
                 }}
               >
                 <Typography
                   id="modal-modal-title"
                   variant="h6"
                   component="h2"
-                  color="white"
+                  color={mainTheme.textColor}
                 >
                   Insert price to your NFT
                 </Typography>
                 <Typography
                   id="modal-modal-description"
-                  color="white"
+                  color={mainTheme.textColor}
                   sx={{ mt: 2 }}
                 >
                   Remember you can't change the price. When you put on sale the
@@ -148,7 +148,7 @@ export const MyNFTsScreen = () => {
                   value={price}
                   onChange={(p) => setPrice(p.target.value)}
                   InputLabelProps={{
-                    style: { color: '#fff' },
+                    style: { color: mainTheme.textColor },
                   }}
                   sx={{
                     marginTop: 4,
@@ -159,12 +159,12 @@ export const MyNFTsScreen = () => {
                     },
                     '& .MuiOutlinedInput-root.Mui-focused': {
                       '& > fieldset': {
-                        borderColor: 'primary',
+                        borderColor: mainTheme.primaryColor,
                       },
                     },
                     '& .MuiOutlinedInput-root:hover': {
                       '& > fieldset': {
-                        borderColor: 'primary.main',
+                        borderColor: mainTheme.primaryColor,
                       },
                     },
                   }}
@@ -195,7 +195,7 @@ export const MyNFTsScreen = () => {
             justifyContent="center"
             sx={{ marginTop: 10, marginLeft: 5, marginRight: 5 }}
           >
-            <Typography color="white" variant="h5">
+            <Typography color={mainTheme.textColor} variant="h5">
               You don't have any NFT.. Explore the market to buy one
             </Typography>
           </Grid>

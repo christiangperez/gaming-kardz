@@ -20,6 +20,7 @@ import DrawerNav from './DrawerNav';
 import { IRootState } from '../../redux/store/store';
 import { useSnackbar } from 'notistack';
 import { useEffect } from 'react';
+import { mainTheme } from '../../common/mainTheme';
 
 interface Props {
   web3Handler: () => Promise<void>;
@@ -60,7 +61,7 @@ const Navbar = ({ web3Handler, account, isOwner }: Props) => {
   }, []);
 
   return (
-    <AppBar position="static" sx={{ background: '#0c1410' }}>
+    <AppBar position="static" sx={{ background: 'transparent' }}>
       <Toolbar>
         <Snackbar
           key="top center"
@@ -119,7 +120,7 @@ const Navbar = ({ web3Handler, account, isOwner }: Props) => {
                   href="#"
                   underline="none"
                   onClick={() => navigate('mint')}
-                  color="white"
+                  color={mainTheme.textColor}
                   sx={{ marginRight: 3 }}
                 >
                   {'MINT'}
@@ -130,7 +131,7 @@ const Navbar = ({ web3Handler, account, isOwner }: Props) => {
                 href="#"
                 underline="none"
                 onClick={() => navigate('home')}
-                color="white"
+                color={mainTheme.textColor}
                 sx={{ marginRight: 3 }}
               >
                 {'HOME'}
@@ -140,7 +141,7 @@ const Navbar = ({ web3Handler, account, isOwner }: Props) => {
                 href="#"
                 underline="none"
                 onClick={() => navigate('market')}
-                color="white"
+                color={mainTheme.textColor}
                 sx={{ marginRight: 3 }}
               >
                 {'MARKET'}
@@ -150,7 +151,7 @@ const Navbar = ({ web3Handler, account, isOwner }: Props) => {
                 href="#"
                 underline="none"
                 onClick={() => navigate('mynfts')}
-                color="white"
+                color={mainTheme.textColor}
                 sx={{ marginRight: 3 }}
               >
                 {'MY NFTS'}
@@ -160,7 +161,7 @@ const Navbar = ({ web3Handler, account, isOwner }: Props) => {
                 href="#"
                 underline="none"
                 onClick={() => navigate('about')}
-                color="white"
+                color={mainTheme.textColor}
                 sx={{ marginRight: 3 }}
               >
                 {'ABOUT'}
@@ -170,8 +171,11 @@ const Navbar = ({ web3Handler, account, isOwner }: Props) => {
         )}
         {account ? (
           <>
-            <AccountBalanceWalletIcon sx={{ color: '#d0f177' }} />
-            <Typography sx={{ marginLeft: '5px' }} color="#d0f177">
+            <AccountBalanceWalletIcon sx={{ color: mainTheme.primaryColor }} />
+            <Typography
+              sx={{ marginLeft: '5px' }}
+              color={mainTheme.primaryColor}
+            >
               {getShortAccount(account)}
             </Typography>
           </>

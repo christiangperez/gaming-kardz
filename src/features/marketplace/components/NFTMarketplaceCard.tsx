@@ -10,6 +10,7 @@ import {
   Grid,
 } from '@mui/material';
 import { ethers } from 'ethers';
+import { mainTheme } from '../../../common/mainTheme';
 
 interface IProps {
   item: INFTItem;
@@ -27,8 +28,10 @@ export const NFTMarketplaceCard = ({
       sx={{ maxWidth: 300, ml: 2, mr: 2, mb: 4 }}
       style={{
         background: `linear-gradient(to right bottom, ${
-          item.latestPrice > 0 ? '#5e7b37' : '#d0f177'
-        }, #192112)`,
+          item.latestPrice > 0
+            ? mainTheme.terciaryColor
+            : mainTheme.primaryColor
+        }, ${mainTheme.secondaryColor})`,
       }}
     >
       <CardActionArea onClick={() => handleClickCard(item)}>
@@ -49,16 +52,21 @@ export const NFTMarketplaceCard = ({
               <>
                 <Typography
                   variant="caption"
-                  color="white"
+                  color={mainTheme.textColor}
                   fontWeight="bold"
                   fontSize={16}
                 >
                   {item.name}{' '}
-                  <Typography variant="caption" color="white">{` #${String(
-                    item.itemId
-                  )}`}</Typography>
+                  <Typography
+                    variant="caption"
+                    color={mainTheme.textColor}
+                  >{` #${String(item.tokenId)}`}</Typography>
                 </Typography>
-                <Typography variant="caption" color="white" fontSize={16}>
+                <Typography
+                  variant="caption"
+                  color={mainTheme.textColor}
+                  fontSize={16}
+                >
                   Price
                 </Typography>
               </>
@@ -76,7 +84,7 @@ export const NFTMarketplaceCard = ({
                 <Grid display="flex" alignItems="center">
                   <Typography
                     variant="caption"
-                    color="white"
+                    color={mainTheme.textColor}
                     textAlign="center"
                     fontSize={14}
                     fontWeight="600"
@@ -86,15 +94,15 @@ export const NFTMarketplaceCard = ({
                 </Grid>
                 <Grid display="flex" alignItems="center">
                   <img
-                    src="../../assets/ether-gold.png"
+                    src="../../assets/ethereum-icon.png"
                     alt="logo"
-                    width={16}
-                    height={16}
-                    style={{ marginRight: 2 }}
+                    width={10}
+                    height={14}
+                    style={{ marginRight: 4 }}
                   />
                   <Typography
                     variant="caption"
-                    color="white"
+                    color={mainTheme.textColor}
                     textAlign="center"
                     fontSize={14}
                     fontWeight="600"
@@ -118,7 +126,7 @@ export const NFTMarketplaceCard = ({
                   <Grid display="flex" alignItems="center">
                     <Typography
                       variant="caption"
-                      color="white"
+                      color={mainTheme.textColor}
                       textAlign="center"
                       fontSize={14}
                       fontWeight="600"
@@ -134,19 +142,19 @@ export const NFTMarketplaceCard = ({
                 >
                   {item.latestPrice > 0 ? (
                     <>
-                      <Typography variant="caption" color="white">
+                      <Typography variant="caption" color={mainTheme.textColor}>
                         Last
                       </Typography>
                       <img
-                        src="../../assets/ether-gold.png"
+                        src="../../assets/ethereum-icon.png"
                         alt="logo"
-                        width={14}
+                        width={10}
                         height={14}
-                        style={{ marginLeft: 2, marginRight: 2 }}
+                        style={{ marginLeft: 4, marginRight: 4 }}
                       />
                       <Typography
                         variant="caption"
-                        color="white"
+                        color={mainTheme.textColor}
                         fontWeight="bold"
                       >
                         {ethers.utils.formatEther(item.latestPrice)}
@@ -155,7 +163,7 @@ export const NFTMarketplaceCard = ({
                   ) : (
                     <Typography
                       variant="caption"
-                      color="white"
+                      color={mainTheme.textColor}
                       fontWeight="bold"
                       letterSpacing={2}
                     >
