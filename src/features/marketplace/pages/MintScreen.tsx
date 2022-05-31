@@ -159,7 +159,7 @@ export const MintScreen = () => {
         maxWidth="xl"
         sx={{ paddingTop: 4 }}
         style={{
-          background: `linear-gradient(to right bottom, #0c1410, ${mainTheme.secondaryColor})`,
+          background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`,
         }}
       >
         <Grid display="flex" justifyContent="center">

@@ -111,7 +111,7 @@ export const HomeScreen = () => {
       <Container
         maxWidth="xl"
         style={{
-          background: `linear-gradient(to right bottom, #0c1410, ${mainTheme.secondaryColor})`,
+          background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`,
         }}
       >
         {/* Explore Section */}
