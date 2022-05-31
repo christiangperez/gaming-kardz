@@ -15,7 +15,8 @@ export const MintScreen = () => {
   );
 
   const [image, setImage] = useState('');
-  const [uris, setUris] = useState<string[]>([]);
+  const [uris, setUris] = useState<any[]>([]);
+  const [prices, setPrices] = useState<any[]>([]);
   const [beginMint, setBeginMint] = useState(false);
   const [jsonCollectionStr, setJsonCollectionStr] = useState('');
   const [copyButtonText, setCopyButtonText] = useState('Copy');
@@ -43,33 +44,25 @@ export const MintScreen = () => {
 
   useEffect(() => {
     const loadUris = async () => {
-      let theUris: string[] = [];
-      // addCollection.nfts.forEach(async (element) => {
       if (jsonCollectionStr) {
         let jsonCollection: IJsonCollection = JSON.parse(jsonCollectionStr);
-        // console.log(jsonCollection.nfts, 'jsonCollection.nfts');
-        jsonCollection.nfts.forEach(async (element) => {
-          const uriImage = element.image;
-          const price = element.price;
-          const name = element.name;
-          const team = element.team;
-          const game = element.game;
-          const description = element.description;
 
+        jsonCollection.nfts.forEach(async (element) => {
           const result = await client.add(
             JSON.stringify({
-              image: uriImage,
-              price,
-              name,
-              team,
-              game,
-              description,
+              image: element.image,
+              price: element.price,
+              name: element.name,
+              team: element.team,
+              game: element.game,
+              description: element.description,
             })
           );
           const uri = `https://ipfs.infura.io/ipfs/${result.path}`;
-          theUris.push(uri);
+          const price = ethers.utils.parseEther(element.price.toString());
 
-          setUris([...theUris]);
+          setUris((uris: any) => uris.concat(uri));
+          setPrices((thePrices: any) => thePrices.concat(price));
         });
       }
     };
@@ -92,9 +85,6 @@ export const MintScreen = () => {
         var reader = new FileReader();
         reader.onload = onReaderLoad;
         reader.readAsText(event.target.files[0]);
-
-        // setBeginMint(true);
-        // await loadUris();
       } catch (error) {
         console.log('ipfs uri upload error: ', error);
       }
@@ -103,12 +93,6 @@ export const MintScreen = () => {
 
   const finalMint = async () => {
     try {
-      let prices: any[] = [];
-
-      addCollection.nfts.forEach((element) => {
-        prices.push(ethers.utils.parseEther(element.price.toString()));
-      });
-
       if (uris.length !== prices.length) {
         // error in data
         return;
@@ -140,6 +124,7 @@ export const MintScreen = () => {
     if (
       beginMint &&
       uris.length > 0 &&
+      prices.length > 0 &&
       uris.length === addCollection.nfts.length
     ) {
       finalMint();
@@ -165,10 +150,7 @@ export const MintScreen = () => {
     document.execCommand('copy');
     document.body.removeChild(el);
     setCopyButtonText('Copied');
-    // alert('Copied the text: ' + content);
   };
-
-  var data = { a: 1, b: 2 };
 
   return (
     <>

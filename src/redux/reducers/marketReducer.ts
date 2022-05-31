@@ -9,6 +9,7 @@ interface IStateMarket {
   marketplaceItems: INFTItem[];
   myNFTsItems: INFTItem[];
   activeNFT?: INFTItem | null;
+  nftTransactions?: any[] | null;
   isOwner: boolean;
   transactionResult: {
     show: boolean;
@@ -33,6 +34,7 @@ const initialState: IStateMarket = {
   marketplaceItems: [],
   myNFTsItems: [],
   activeNFT: null,
+  nftTransactions: [],
   isOwner: false,
   transactionResult: {
     show: false,
@@ -134,6 +136,12 @@ export const marketReducer = (
       return {
         ...state,
         activeNFT: action.payload,
+      };
+
+    case 'setNFTTransactions':
+      return {
+        ...state,
+        nftTransactions: action.payload,
       };
 
     case 'setEnqueueSnackbar':

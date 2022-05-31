@@ -19,7 +19,7 @@ export const loadMarketplaceItems = () => {
         const item = await marketplaceContract.items(i);
         if (item.onSale && item.seller.toLowerCase() !== account) {
           // get uri url from nft contract
-          const uri = await nftContract.tokenURI(item.tokenId);
+          const uri = await nftContract.tokenURI(item.itemId);
           // use uri to fetch the nft metadata stored on ipfs
           const response = await fetch(uri);
           const metadata = await response.json();
@@ -222,6 +222,53 @@ export const getNFTItem = (itemId: any) => {
 
       console.log('Exception error: ' + error, 'Exception');
       dispatch({ type: 'loadingActiveNFT', payload: false });
+      enqueueSnackbar('Exception error: ' + error, { variant: 'error' });
+    }
+  };
+};
+
+export const loadNFTTransactions = (itemId: number) => {
+  return async (dispatch: Dispatch<MarketTypes>, getState: any) => {
+    try {
+      // dispatch({ type: 'loadingMyNFTsItems', payload: true });
+
+      const { nftContract, marketplaceContract, account } = getState().market;
+
+      const filter = marketplaceContract.filters.Bought(
+        itemId,
+        null,
+        null,
+        null,
+        null,
+        null
+      );
+
+      const results = await marketplaceContract.queryFilter(filter);
+
+      const purchases = await Promise.all(
+        results.map(async (i: any) => {
+          // fetch arguments from each result
+          let args = i.args;
+
+          let purchasedItem = {
+            totalPrice: args.totalPrice,
+            price: args.price,
+            itemId: args.itemId,
+            seller: args.seller,
+            buyer: args.buyer,
+          };
+
+          return purchasedItem;
+        })
+      );
+
+      dispatch({ type: 'setNFTTransactions', payload: purchases });
+      // dispatch({ type: 'loadingMyNFTsItems', payload: false });
+    } catch (error) {
+      const { enqueueSnackbar } = getState().market;
+
+      console.log('Exception error: ' + error, 'Exception');
+      dispatch({ type: 'loadingMyNFTsItems', payload: false });
       enqueueSnackbar('Exception error: ' + error, { variant: 'error' });
     }
   };

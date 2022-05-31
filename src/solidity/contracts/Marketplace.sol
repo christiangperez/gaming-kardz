@@ -39,10 +39,11 @@ contract Marketplace is ReentrancyGuard {
     );
 
     event Bought (
-        uint itemId,
-        address indexed nft,
+        uint indexed itemId,
+        address nft,
         uint tokenId,
         uint price,
+        uint totalPrice,
         address indexed seller,
         address indexed buyer
     );
@@ -145,6 +146,7 @@ contract Marketplace is ReentrancyGuard {
             address(item.nft),
             item.tokenId,
             item.price,
+            getTotalPrice(_itemId),
             item.seller,
             msg.sender
         );

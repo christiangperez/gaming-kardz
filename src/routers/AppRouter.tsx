@@ -13,7 +13,7 @@ import NFTAbi from '../contractsData/NFT.json';
 import NFTAddress from '../contractsData/NFT-address.json';
 import MarketplaceAbi from '../contractsData/Marketplace.json';
 import MarketplaceAddress from '../contractsData/Marketplace-address.json';
-import { Navbar } from '../features/nav/Navbar';
+import Navbar from '../features/nav/Navbar';
 import { MarketplaceScreen } from '../features/marketplace/pages/MarketplaceScreen';
 import { MyNFTsScreen } from '../features/marketplace/pages/MyNFTsScreen';
 import { IRootState } from '../redux/store/store';
@@ -29,6 +29,8 @@ import { HomeScreen } from '../features/home/pages/HomeScreen';
 import { ConnectWalletScreen } from '../features/home/pages/ConnectWalletScreen';
 import { NotFoundScreen } from '../features/home/pages/NotFoundScreen';
 import { DevelopmentScreen } from '../features/home/pages/DevelopmentScreen';
+import { useSnackbar } from 'notistack';
+import TestComponent from '../features/marketplace/pages/TestComponent';
 
 export const AppRouter = () => {
   const dispatch = useDispatch();
@@ -52,6 +54,7 @@ export const AppRouter = () => {
     buyer: any;
   }
 
+  // const { enqueueSnackbar } = useSnackbar();
   const [txsSetOnSale, setTxsSetOnSale] = useState<ITxsSetOnSale[]>([]);
   const [txsBought, setTxsBought] = useState<ITxsBought[]>([]);
 
@@ -184,7 +187,6 @@ export const AppRouter = () => {
 
         <Routes>
           <Route path="/home" element={<HomeScreen />} />
-
           {!loading ? (
             <>
               <Route path="/mint" element={<MintScreen />} />
@@ -200,7 +202,6 @@ export const AppRouter = () => {
               <Route path="/nft/:idNft" element={<ConnectWalletScreen />} />
             </>
           )}
-
           <Route path="/about" element={<AboutScreen />} />
           <Route path="/development" element={<DevelopmentScreen />} />
 

@@ -21,6 +21,7 @@ export type MarketTypes =
       };
     }
   | { type: 'setActiveNFT'; payload: INFTItem }
+  | { type: 'setNFTTransactions'; payload: any[] }
   | { type: 'clearActiveNFT' }
   | {
       type: 'setEnqueueSnackbar';
