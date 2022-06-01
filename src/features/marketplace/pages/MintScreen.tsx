@@ -4,7 +4,6 @@ import { create as ipfsHttpClient } from 'ipfs-http-client';
 import { ethers } from 'ethers';
 import { useSelector } from 'react-redux';
 import { IRootState } from '../../../redux/store/store';
-import addCollection from '../../../addCollectionAstralisNavi.json';
 import collectionExample from '../../../assets/data/collectionExample.json';
 import { IJsonCollection } from '../../../interfaces/marketplaceInterfaces';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
@@ -21,6 +20,8 @@ export const MintScreen = () => {
   const [beginMint, setBeginMint] = useState(false);
   const [jsonCollectionStr, setJsonCollectionStr] = useState('');
   const [copyButtonText, setCopyButtonText] = useState('Copy');
+  const [beneficiary, setBeneficiary] = useState('');
+  const [totalNftsJson, setTotalNftsJson] = useState(0);
 
   const client = ipfsHttpClient({ url: 'https://ipfs.infura.io:5001/api/v0' });
 
@@ -48,6 +49,8 @@ export const MintScreen = () => {
       if (jsonCollectionStr) {
         let jsonCollection: IJsonCollection = JSON.parse(jsonCollectionStr);
 
+        setBeneficiary(jsonCollection.beneficiary);
+        setTotalNftsJson(jsonCollection.nfts.length);
         jsonCollection.nfts.forEach(async (element) => {
           const result = await client.add(
             JSON.stringify({
@@ -102,7 +105,7 @@ export const MintScreen = () => {
       await (
         await marketplaceContract.mintAndMakeCollection(
           uris,
-          addCollection.beneficiary ? addCollection.beneficiary : '0x0',
+          beneficiary ? beneficiary : '0x0',
           nftContract.address,
           nftContract.address,
           prices
@@ -126,7 +129,7 @@ export const MintScreen = () => {
       beginMint &&
       uris.length > 0 &&
       prices.length > 0 &&
-      uris.length === addCollection.nfts.length
+      uris.length === totalNftsJson
     ) {
       finalMint();
       setBeginMint(false);
