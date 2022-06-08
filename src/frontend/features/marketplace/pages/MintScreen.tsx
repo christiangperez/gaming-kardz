@@ -4,7 +4,7 @@ import { create as ipfsHttpClient } from 'ipfs-http-client';
 import { ethers } from 'ethers';
 import { useSelector } from 'react-redux';
 import { IRootState } from '../../../redux/store/store';
-import collectionExample from '../../../assets/data/collectionExample.json';
+import collectionExample from '../../../../frontend/assets/data/collectionExample.json';
 import { IJsonCollection } from '../../../interfaces/marketplaceInterfaces';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { mainTheme } from '../../../common/mainTheme';

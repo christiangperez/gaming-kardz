@@ -32,7 +32,6 @@ export const HomeScreen = () => {
   const [height, setHeight] = useState(window.innerHeight);
   const theme = useTheme();
   const isSmOrLess = useMediaQuery(theme.breakpoints.down('md'));
-  const isMdOrLess = useMediaQuery(theme.breakpoints.down('lg'));
 
   // Resize Effect Listener
   useEffect(() => {

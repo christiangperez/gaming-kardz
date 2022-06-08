@@ -9,10 +9,10 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { ethers } from 'ethers';
 
-import NFTAbi from '../contractsData/NFT.json';
-import NFTAddress from '../contractsData/NFT-address.json';
-import MarketplaceAbi from '../contractsData/Marketplace.json';
-import MarketplaceAddress from '../contractsData/Marketplace-address.json';
+import NFTAbi from '../../frontend/contractsData/NFT.json';
+import NFTAddress from '../../frontend/contractsData/NFT-address.json';
+import MarketplaceAbi from '../../frontend/contractsData/Marketplace.json';
+import MarketplaceAddress from '../../frontend/contractsData/Marketplace-address.json';
 import Navbar from '../features/nav/Navbar';
 import { MarketplaceScreen } from '../features/marketplace/pages/MarketplaceScreen';
 import { MyNFTsScreen } from '../features/marketplace/pages/MyNFTsScreen';

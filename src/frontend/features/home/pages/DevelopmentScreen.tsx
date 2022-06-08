@@ -1,7 +1,6 @@
 import { Container, Typography, Grid, Paper } from '@mui/material';
 import { mainTheme } from '../../../common/mainTheme';
 import MuiIcon from '../../../assets/technologies/mui.png';
-import ReactTestingLibraryIcon from '../../../assets/technologies/react-testing-library.png';
 import ReactIcon from '../../../assets/technologies/react.png';
 import ReduxIcon from '../../../assets/technologies/redux.png';
 import SolidityIcon from '../../../assets/technologies/solidity.png';

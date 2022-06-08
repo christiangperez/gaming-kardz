@@ -1,13 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  CardActionArea,
   Typography,
-  Card,
-  CardContent,
-  CardMedia,
   Container,
-  CardActions,
   Button,
   Grid,
   Modal,
@@ -15,7 +10,6 @@ import {
   TextField,
   CircularProgress,
 } from '@mui/material';
-import { ethers } from 'ethers';
 import { IRootState } from '../../../redux/store/store';
 import {
   loadMyNFTsItems,
