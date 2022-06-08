@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import { ethers } from 'ethers';
 import { mainTheme } from '../../../common/mainTheme';
+import EthereumIcon from '../../../assets/blockchains/ethereum-icon.png';
 
 interface IProps {
   item: INFTItem;
@@ -94,7 +95,7 @@ export const NFTMarketplaceCard = ({
                 </Grid>
                 <Grid display="flex" alignItems="center">
                   <img
-                    src="../../assets/ethereum-icon.png"
+                    src={EthereumIcon}
                     alt="logo"
                     width={10}
                     height={14}
@@ -146,7 +147,7 @@ export const NFTMarketplaceCard = ({
                         Last
                       </Typography>
                       <img
-                        src="../../assets/ethereum-icon.png"
+                        src={EthereumIcon}
                         alt="logo"
                         width={10}
                         height={14}

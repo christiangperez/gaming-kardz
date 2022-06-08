@@ -1,5 +1,12 @@
 import { Container, Typography, Grid, Paper } from '@mui/material';
 import { mainTheme } from '../../../common/mainTheme';
+import MuiIcon from '../../../assets/technologies/mui.png';
+import ReactTestingLibraryIcon from '../../../assets/technologies/react-testing-library.png';
+import ReactIcon from '../../../assets/technologies/react.png';
+import ReduxIcon from '../../../assets/technologies/redux.png';
+import SolidityIcon from '../../../assets/technologies/solidity.png';
+import TruffleIcon from '../../../assets/technologies/truffle.png';
+import TypescriptIcon from '../../../assets/technologies/typescript.png';
 
 export const DevelopmentScreen = () => {
   return (
@@ -34,7 +41,7 @@ export const DevelopmentScreen = () => {
           </Typography>
           <Grid container alignItems="center" sx={{ mt: 1 }}>
             <img
-              src="../../assets/react.png"
+              src={ReactIcon}
               alt="react"
               width={24}
               height={24}
@@ -44,7 +51,7 @@ export const DevelopmentScreen = () => {
           </Grid>
           <Grid container alignItems="center" sx={{ mt: 1 }}>
             <img
-              src="../../assets/typescript.png"
+              src={TypescriptIcon}
               alt="typescript"
               width={24}
               height={24}
@@ -54,7 +61,7 @@ export const DevelopmentScreen = () => {
           </Grid>
           <Grid container alignItems="center" sx={{ mt: 1 }}>
             <img
-              src="../../assets/redux.png"
+              src={ReduxIcon}
               alt="redux"
               width={24}
               height={24}
@@ -64,7 +71,7 @@ export const DevelopmentScreen = () => {
           </Grid>
           <Grid container alignItems="center" sx={{ mt: 1 }}>
             <img
-              src="../../assets/mui.png"
+              src={MuiIcon}
               alt="mui"
               width={24}
               height={24}
@@ -72,22 +79,22 @@ export const DevelopmentScreen = () => {
             />
             Material UI
           </Grid>
-          <Grid container alignItems="center" sx={{ mt: 1 }}>
+          {/* <Grid container alignItems="center" sx={{ mt: 1 }}>
             <img
-              src="../../assets/react-testing-library.png"
+              src={ReactTestingLibraryIcon}
               alt="react-testing-library"
               width={24}
               height={24}
               style={{ marginRight: 5 }}
             />
             React Testing Library
-          </Grid>
+          </Grid> */}
           <Typography variant="subtitle1" fontWeight="bold" sx={{ mt: 1 }}>
             Smart Contract technology
           </Typography>
           <Grid container alignItems="center" sx={{ mt: 1 }}>
             <img
-              src="../../assets/solidity.png"
+              src={SolidityIcon}
               alt="solidity"
               width={24}
               height={24}
@@ -97,7 +104,7 @@ export const DevelopmentScreen = () => {
           </Grid>
           <Grid container alignItems="center" sx={{ mt: 1 }}>
             <img
-              src="../../assets/truffle.png"
+              src={TruffleIcon}
               alt="truffle"
               width={24}
               height={24}

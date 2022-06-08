@@ -21,6 +21,7 @@ import { IRootState } from '../../redux/store/store';
 import { useSnackbar } from 'notistack';
 import { useEffect } from 'react';
 import { mainTheme } from '../../common/mainTheme';
+import AppLogo from '../../assets/app/logo.png';
 
 interface Props {
   web3Handler: () => Promise<void>;
@@ -91,7 +92,7 @@ const Navbar = ({ web3Handler, account, isOwner }: Props) => {
               onClick={() => navigate('home')}
             >
               <img
-                src="../../assets/logo.png"
+                src={AppLogo}
                 alt="logo"
                 width={24}
                 height={24}

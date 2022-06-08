@@ -28,6 +28,7 @@ import { IRootState } from '../../../redux/store/store';
 import { INFTItem } from '../../../interfaces/marketplaceInterfaces';
 import { NFTTransactions } from '../components/NFTTransactions';
 import { mainTheme } from '../../../common/mainTheme';
+import EthereumIcon from '../../../assets/blockchains/ethereum-icon.png';
 
 export const NFTDetailScreen = () => {
   const dispatch = useDispatch();
@@ -87,17 +88,6 @@ export const NFTDetailScreen = () => {
   useEffect(() => {
     dispatch(getNFTItem(idNft));
   }, []);
-
-  // useEffect(() => {
-  //   if (nftTransactions && nftTransactions.length > 0) {
-  //     // console.log(nftTransactions, 'useEffect nftTransactions');
-  //     // console.log(nftTransactions, 'nftTransactions');
-  //     nftTransactions.map((t) => {
-  //       console.log(t.price.toString(), 't');
-  //       return 1;
-  //     });
-  //   }
-  // }, [nftTransactions]);
 
   function createData(
     name: any,
@@ -330,7 +320,7 @@ export const NFTDetailScreen = () => {
                       Bought
                     </Typography>
                     <img
-                      src="../../assets/ethereum-icon.png"
+                      src={EthereumIcon}
                       alt="logo"
                       width={10}
                       height={14}
@@ -354,7 +344,7 @@ export const NFTDetailScreen = () => {
                     </Typography>
                     <Grid display="flex" alignItems="center">
                       <img
-                        src="../../assets/ethereum-icon.png"
+                        src={EthereumIcon}
                         alt="logo"
                         width={12}
                         height={16}

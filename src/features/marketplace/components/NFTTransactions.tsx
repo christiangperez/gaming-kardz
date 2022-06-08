@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux';
 import { IRootState } from '../../../redux/store/store';
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import { mainTheme } from '../../../common/mainTheme';
+import EthereumIcon from '../../../assets/blockchains/ethereum-icon.png';
 
 export const NFTTransactions = () => {
   const { nftTransactions } = useSelector((state: IRootState) => state.market);
@@ -86,7 +87,7 @@ export const NFTTransactions = () => {
                   </TableCell>
                   <TableCell sx={{ color: 'white' }} align="right">
                     <img
-                      src="../../assets/ethereum-icon.png"
+                      src={EthereumIcon}
                       alt="logo"
                       width={10}
                       height={14}

@@ -13,6 +13,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import EmailIcon from '@mui/icons-material/Email';
 import { useNavigate } from 'react-router';
 import { mainTheme } from '../../../common/mainTheme';
+import AppLogo from '../../../assets/app/logo.png';
 
 export const Footer = () => {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ export const Footer = () => {
         <Grid item xs={12} md={3}>
           <Grid item display="flex" alignItems="center" justifyContent="center">
             <img
-              src="../../assets/logo.png"
+              src={AppLogo}
               alt="logo"
               width={32}
               height={32}

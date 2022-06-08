@@ -11,6 +11,7 @@ import {
 import { ethers } from 'ethers';
 import { mainTheme } from '../../../common/mainTheme';
 import { INFTItem } from '../../../interfaces/marketplaceInterfaces';
+import EthereumIcon from '../../../assets/blockchains/ethereum-icon.png';
 
 interface IProps {
   item: INFTItem;
@@ -99,7 +100,7 @@ export const MyNFTCard = ({
                     Bought
                   </Typography>
                   <img
-                    src="../../assets/ethereum-icon.png"
+                    src={EthereumIcon}
                     alt="logo"
                     width={10}
                     height={14}

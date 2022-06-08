@@ -16,6 +16,8 @@ import { StepsCard } from '../components/StepsCard';
 import { Footer } from '../components/Footer';
 import './Home.css';
 import { mainTheme } from '../../../common/mainTheme';
+import VitalityHome from '../../../assets/home/vitality-home.png';
+import SellHome from '../../../assets/home/sell-home.png';
 
 export const HomeScreen = () => {
   const navigate = useNavigate();
@@ -184,7 +186,7 @@ export const HomeScreen = () => {
                 maxWidth: { xs: 350, md: 500 },
               }}
               alt="The house from the offer."
-              src="../../assets/vitality-home.png"
+              src={VitalityHome}
             />
           </Grid>
         </Grid>
@@ -216,7 +218,7 @@ export const HomeScreen = () => {
                   marginTop: { xs: 5, md: 0 },
                 }}
                 alt="Sell"
-                src="../../assets/sell-home.png"
+                src={SellHome}
               />
             </Grid>
             <Grid
