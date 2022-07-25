@@ -14,10 +14,10 @@ import SellIcon from '@mui/icons-material/Sell';
 import PaidIcon from '@mui/icons-material/Paid';
 import { StepsCard } from '../components/StepsCard';
 import { Footer } from '../components/Footer';
-import './Home.css';
 import { mainTheme } from '../../../common/mainTheme';
 import VitalityHome from '../../../assets/home/vitality-home.png';
 import SellHome from '../../../assets/home/sell-home.png';
+import './Home.css';
 
 export const HomeScreen = () => {
   const navigate = useNavigate();

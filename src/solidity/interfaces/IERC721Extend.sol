@@ -12,4 +12,6 @@ interface IERC721Extend is IERC721 {
     function setCollectionOwner(uint256 _tokenId, address _collectionOwner) external;
 
     function getCollectionOwner(uint256 _tokenId) external view returns (address);
+
+    function getCollectionOwnersEarnPercentage(address _owner) external view returns (uint);
 }

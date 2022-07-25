@@ -30,6 +30,10 @@ const DrawerNav = ({ isOwner }: Props) => {
     navigate('mynfts');
     setOpenDrawer(false);
   };
+  const handleClickClaim = () => {
+    navigate('claim');
+    setOpenDrawer(false);
+  };
   const handleClickAbout = () => {
     navigate('about');
     setOpenDrawer(false);
@@ -117,6 +121,20 @@ const DrawerNav = ({ isOwner }: Props) => {
                   sx={{ marginLeft: 3, marginRight: 3, fontSize: 18 }}
                 >
                   {'MY NFTS'}
+                </Link>
+              </Grid>
+            </Grid>
+            <Grid container sx={{ marginTop: 2 }}>
+              <Grid>
+                <Link
+                  className="home-nav-link"
+                  href="#"
+                  underline="none"
+                  onClick={handleClickClaim}
+                  color={mainTheme.textColor}
+                  sx={{ marginLeft: 3, marginRight: 3, fontSize: 18 }}
+                >
+                  {'CLAIM'}
                 </Link>
               </Grid>
             </Grid>

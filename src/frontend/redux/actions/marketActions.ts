@@ -110,7 +110,13 @@ export const purchaseMarketplaceItem = (item: INFTItem) => {
     try {
       dispatch({ type: 'loadingPurchaseItem', payload: true });
 
-      const { marketplaceContract, enqueueSnackbar } = getState().market;
+      const { nftContract, marketplaceContract, enqueueSnackbar } =
+        getState().market;
+
+      // Approve transaction needed
+      await (
+        await nftContract.setApprovalForAll(marketplaceContract.address, true)
+      ).wait();
 
       await (
         await marketplaceContract.purchaseItem(item.tokenId, {
@@ -269,6 +275,55 @@ export const loadNFTTransactions = (tokenId: number) => {
 
       console.log('Exception error: ' + error, 'Exception');
       dispatch({ type: 'loadingNFTTransactions', payload: false });
+      enqueueSnackbar('Exception error: ' + error, { variant: 'error' });
+    }
+  };
+};
+
+export const claimEarns = () => {
+  return async (dispatch: Dispatch<MarketTypes>, getState: any) => {
+    try {
+      dispatch({ type: 'loadingClaimEarns', payload: true });
+
+      const { marketplaceContract, enqueueSnackbar } = getState().market;
+
+      await marketplaceContract.claimEarns();
+
+      enqueueSnackbar('The transaction has been sent', { variant: 'info' });
+
+      dispatch({ type: 'loadingClaimEarns', payload: false });
+    } catch (error) {
+      const { enqueueSnackbar } = getState().market;
+
+      console.log('Exception error: ' + error, 'Exception');
+      dispatch({ type: 'loadingClaimEarns', payload: false });
+      enqueueSnackbar('Exception error: ' + error, { variant: 'error' });
+    }
+  };
+};
+
+export const getBalanceToClaim = () => {
+  return async (dispatch: Dispatch<MarketTypes>, getState: any) => {
+    try {
+      dispatch({ type: 'loadingBalanceToClaim', payload: true });
+
+      const { marketplaceContract, account } = getState().market;
+
+      const balanceToClaim = await marketplaceContract.getAccountsBalance(
+        account
+      );
+
+      dispatch({
+        type: 'setBalanceToClaim',
+        payload: balanceToClaim.toString(),
+      });
+
+      dispatch({ type: 'loadingBalanceToClaim', payload: false });
+    } catch (error) {
+      const { enqueueSnackbar } = getState().market;
+
+      console.log('Exception error: ' + error, 'Exception');
+      dispatch({ type: 'loadingBalanceToClaim', payload: false });
       enqueueSnackbar('Exception error: ' + error, { variant: 'error' });
     }
   };

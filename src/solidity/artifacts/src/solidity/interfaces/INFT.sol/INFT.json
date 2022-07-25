@@ -12,13 +12,18 @@
         },
         {
           "internalType": "address",
-          "name": "from",
+          "name": "_from",
           "type": "address"
         },
         {
           "internalType": "address",
-          "name": "minter",
+          "name": "_collectionOwner",
           "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_percentageEarnCollection",
+          "type": "uint256"
         }
       ],
       "name": "mint",

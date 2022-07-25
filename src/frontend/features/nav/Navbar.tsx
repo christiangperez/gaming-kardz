@@ -161,6 +161,16 @@ const Navbar = ({ web3Handler, account, isOwner }: Props) => {
                 className="home-nav-link"
                 href="#"
                 underline="none"
+                onClick={() => navigate('claim')}
+                color={mainTheme.textColor}
+                sx={{ marginRight: 3 }}
+              >
+                {'CLAIM'}
+              </Link>
+              <Link
+                className="home-nav-link"
+                href="#"
+                underline="none"
                 onClick={() => navigate('about')}
                 color={mainTheme.textColor}
                 sx={{ marginRight: 3 }}

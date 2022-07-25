@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { IRootState } from '../../../redux/store/store';
 import {
   Typography,
@@ -13,7 +14,6 @@ import {
   purchaseMarketplaceItem,
 } from '../../../redux/actions/marketActions';
 import { INFTItem } from '../../../interfaces/marketplaceInterfaces';
-import { useNavigate } from 'react-router-dom';
 import { NFTMarketplaceCard } from '../components/NFTMarketplaceCard';
 import { mainTheme } from '../../../common/mainTheme';
 

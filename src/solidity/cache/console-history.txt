@@ -1,0 +1,6 @@
+quit
+exit
+console.log(deployer)
+[deployer, addr1, addr2] = await ethers.getSigners();
+const marketplace = await ethers.getContractFactory("Marketplace")
+const NFT = await ethers.getContractFactory("NFT")

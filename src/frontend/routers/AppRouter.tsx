@@ -29,6 +29,7 @@ import { HomeScreen } from '../features/home/pages/HomeScreen';
 import { ConnectWalletScreen } from '../features/home/pages/ConnectWalletScreen';
 import { NotFoundScreen } from '../features/home/pages/NotFoundScreen';
 import { DevelopmentScreen } from '../features/home/pages/DevelopmentScreen';
+import ClaimScreen from '../features/marketplace/pages/ClaimScreen';
 
 export const AppRouter = () => {
   const dispatch = useDispatch();
@@ -52,7 +53,6 @@ export const AppRouter = () => {
     buyer: any;
   }
 
-  // const { enqueueSnackbar } = useSnackbar();
   const [txsSetOnSale, setTxsSetOnSale] = useState<ITxsSetOnSale[]>([]);
   const [txsBought, setTxsBought] = useState<ITxsBought[]>([]);
 
@@ -190,6 +190,7 @@ export const AppRouter = () => {
               <Route path="/mint" element={<MintScreen />} />
               <Route path="/market" element={<MarketplaceScreen />} />
               <Route path="/mynfts" element={<MyNFTsScreen />} />
+              <Route path="/CLAIM" element={<ClaimScreen />} />
               <Route path="/nft/:idNft" element={<NFTDetailScreen />} />
             </>
           ) : (
@@ -197,6 +198,7 @@ export const AppRouter = () => {
               <Route path="/mint" element={<ConnectWalletScreen />} />
               <Route path="/market" element={<ConnectWalletScreen />} />
               <Route path="/mynfts" element={<ConnectWalletScreen />} />
+              <Route path="/CLAIM" element={<ConnectWalletScreen />} />
               <Route path="/nft/:idNft" element={<ConnectWalletScreen />} />
             </>
           )}

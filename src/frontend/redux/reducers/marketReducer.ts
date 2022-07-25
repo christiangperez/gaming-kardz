@@ -16,12 +16,15 @@ interface IStateMarket {
     okStatus?: boolean;
     description?: string;
   };
+  balanceToClaim: string;
   loadingMarketplaceItems: boolean;
   loadingMyNFTsItems: boolean;
   loadingPurchaseItem: boolean;
   loadingSetItemOnSale: boolean;
   loadingActiveNFT: boolean;
   loadingNFTTransactions: boolean;
+  loadingClaimEarns: boolean;
+  loadingBalanceToClaim: boolean;
   enqueueSnackbar?: (
     message: SnackbarMessage,
     options?: OptionsObject | undefined
@@ -40,12 +43,15 @@ const initialState: IStateMarket = {
   transactionResult: {
     show: false,
   },
+  balanceToClaim: '',
   loadingMarketplaceItems: false,
   loadingMyNFTsItems: false,
   loadingPurchaseItem: false,
   loadingSetItemOnSale: false,
   loadingActiveNFT: false,
   loadingNFTTransactions: false,
+  loadingClaimEarns: false,
+  loadingBalanceToClaim: false,
   enqueueSnackbar: undefined,
 };
 
@@ -77,6 +83,12 @@ export const marketReducer = (
       return {
         ...state,
         myNFTsItems: action.payload,
+      };
+
+    case 'setBalanceToClaim':
+      return {
+        ...state,
+        balanceToClaim: action.payload,
       };
 
     case 'loadingMarketplaceItems':
@@ -113,6 +125,18 @@ export const marketReducer = (
       return {
         ...state,
         loadingNFTTransactions: action.payload,
+      };
+
+    case 'loadingClaimEarns':
+      return {
+        ...state,
+        loadingClaimEarns: action.payload,
+      };
+
+    case 'loadingBalanceToClaim':
+      return {
+        ...state,
+        loadingBalanceToClaim: action.payload,
       };
 
     case 'setIsOwner':

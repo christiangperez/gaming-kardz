@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react';
-import { Button, Container, Grid, TextField, Typography } from '@mui/material';
 import { create as ipfsHttpClient } from 'ipfs-http-client';
 import { ethers } from 'ethers';
 import { useSelector } from 'react-redux';
 import { IRootState } from '../../../redux/store/store';
+import { Button, Container, Grid, TextField, Typography } from '@mui/material';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import collectionExample from '../../../../frontend/assets/data/collectionExample.json';
 import { IJsonCollection } from '../../../interfaces/marketplaceInterfaces';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { mainTheme } from '../../../common/mainTheme';
+import { INFURA_IPFS_API, INFURA_IPFS_URI } from '../../../constants/constants';
+import nftContractAddress from '../../../contractsData/NFT-address.json';
 
 export const MintScreen = () => {
-  const { nftContract, marketplaceContract, enqueueSnackbar } = useSelector(
-    (state: IRootState) => state.market
-  );
+  const { nftContract, marketplaceContract, enqueueSnackbar, account } =
+    useSelector((state: IRootState) => state.market);
 
   const [image, setImage] = useState('');
   const [uris, setUris] = useState<any[]>([]);
@@ -20,10 +21,11 @@ export const MintScreen = () => {
   const [beginMint, setBeginMint] = useState(false);
   const [jsonCollectionStr, setJsonCollectionStr] = useState('');
   const [copyButtonText, setCopyButtonText] = useState('Copy');
-  const [beneficiary, setBeneficiary] = useState('');
+  const [collectionOwner, setCollectionOwner] = useState('');
+  const [earnsPercentage, setEarnsPercentage] = useState(0);
   const [totalNftsJson, setTotalNftsJson] = useState(0);
 
-  const client = ipfsHttpClient({ url: 'https://ipfs.infura.io:5001/api/v0' });
+  const client = ipfsHttpClient({ url: INFURA_IPFS_API });
 
   const uploadToIPFS = async (event: any) => {
     event.preventDefault();
@@ -32,7 +34,7 @@ export const MintScreen = () => {
       try {
         const result = await client.add(file);
 
-        setImage(`https://ipfs.infura.io/ipfs/${result.path}`);
+        setImage(`${INFURA_IPFS_URI}/${result.path}`);
         setCopyButtonText('Copy');
       } catch (error) {
         console.log('ipfs image upload error: ', error);
@@ -49,8 +51,10 @@ export const MintScreen = () => {
       if (jsonCollectionStr) {
         let jsonCollection: IJsonCollection = JSON.parse(jsonCollectionStr);
 
-        setBeneficiary(jsonCollection.beneficiary);
+        setCollectionOwner(jsonCollection.collectionOwner);
+        setEarnsPercentage(jsonCollection.earnsPercentage);
         setTotalNftsJson(jsonCollection.nfts.length);
+
         jsonCollection.nfts.forEach(async (element) => {
           const result = await client.add(
             JSON.stringify({
@@ -62,10 +66,10 @@ export const MintScreen = () => {
               description: element.description,
             })
           );
-          const uri = `https://ipfs.infura.io/ipfs/${result.path}`;
+          const uri = `${INFURA_IPFS_URI}/${result.path}`;
+          setUris((uris: any) => uris.concat(uri));
           const price = ethers.utils.parseEther(element.price.toString());
 
-          setUris((uris: any) => uris.concat(uri));
           setPrices((thePrices: any) => thePrices.concat(price));
         });
       }
@@ -102,10 +106,16 @@ export const MintScreen = () => {
         return;
       }
 
+      // Approve transaction needed
       await (
-        await marketplaceContract.mintAndMakeCollection(
+        await nftContract.setApprovalForAll(marketplaceContract.address, true)
+      ).wait();
+
+      await (
+        await marketplaceContract.mintCollection(
           uris,
-          beneficiary ? beneficiary : '0x0',
+          collectionOwner ? collectionOwner : '0x0',
+          earnsPercentage ? earnsPercentage : 0,
           nftContract.address,
           nftContract.address,
           prices

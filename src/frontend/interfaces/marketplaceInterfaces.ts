@@ -13,7 +13,9 @@ export interface INFTItem {
 }
 
 export interface IJsonCollection {
-  beneficiary: string;
+  collectionOwner: string;
+  earnsPercentage: number;
+  imagesUploaded: boolean;
   nfts: Nft[];
 }
 
