@@ -184,13 +184,13 @@ export const AppRouter = () => {
         <Navbar web3Handler={web3Handler} account={account} isOwner={isOwner} />
 
         <Routes>
-          <Route path="/home" element={<HomeScreen />} />
+          <Route path="/" element={<HomeScreen />} />
           {!loading ? (
             <>
               <Route path="/mint" element={<MintScreen />} />
               <Route path="/market" element={<MarketplaceScreen />} />
               <Route path="/mynfts" element={<MyNFTsScreen />} />
-              <Route path="/CLAIM" element={<ClaimScreen />} />
+              <Route path="/claim" element={<ClaimScreen />} />
               <Route path="/nft/:idNft" element={<NFTDetailScreen />} />
             </>
           ) : (
@@ -198,14 +198,13 @@ export const AppRouter = () => {
               <Route path="/mint" element={<ConnectWalletScreen />} />
               <Route path="/market" element={<ConnectWalletScreen />} />
               <Route path="/mynfts" element={<ConnectWalletScreen />} />
-              <Route path="/CLAIM" element={<ConnectWalletScreen />} />
+              <Route path="/claim" element={<ConnectWalletScreen />} />
               <Route path="/nft/:idNft" element={<ConnectWalletScreen />} />
             </>
           )}
           <Route path="/about" element={<AboutScreen />} />
           <Route path="/development" element={<DevelopmentScreen />} />
 
-          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="*" element={<NotFoundScreen />} />
         </Routes>
       </Router>

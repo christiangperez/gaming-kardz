@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
 import { Drawer, IconButton, Typography, Grid, Link, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { mainTheme } from '../../common/mainTheme';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
   isOwner: boolean;
@@ -11,32 +10,31 @@ interface Props {
 
 const DrawerNav = ({ isOwner }: Props) => {
   const navigate = useNavigate();
-
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const handleClickMint = () => {
-    navigate('mint');
     setOpenDrawer(false);
+    navigate('mint');
   };
   const handleClickHome = () => {
-    navigate('home');
     setOpenDrawer(false);
+    navigate('/');
   };
   const handleClickMarketplace = () => {
-    navigate('market');
     setOpenDrawer(false);
+    navigate('market');
   };
   const handleClickMyNFTs = () => {
-    navigate('mynfts');
     setOpenDrawer(false);
+    navigate('myNfts');
   };
   const handleClickClaim = () => {
-    navigate('claim');
     setOpenDrawer(false);
+    navigate('claim');
   };
   const handleClickAbout = () => {
-    navigate('about');
     setOpenDrawer(false);
+    navigate('about');
   };
 
   return (
@@ -71,11 +69,15 @@ const DrawerNav = ({ isOwner }: Props) => {
                 <Grid>
                   <Link
                     className="home-nav-link"
-                    href="#"
                     underline="none"
                     onClick={handleClickMint}
                     color={mainTheme.textColor}
-                    sx={{ marginLeft: 3, marginRight: 3, fontSize: 18 }}
+                    sx={{
+                      marginLeft: 3,
+                      marginRight: 3,
+                      fontSize: 18,
+                      cursor: 'pointer',
+                    }}
                   >
                     {'MINT'}
                   </Link>
@@ -86,11 +88,15 @@ const DrawerNav = ({ isOwner }: Props) => {
               <Grid>
                 <Link
                   className="home-nav-link"
-                  href="#"
                   underline="none"
                   onClick={handleClickHome}
                   color={mainTheme.textColor}
-                  sx={{ marginLeft: 3, marginRight: 3, fontSize: 18 }}
+                  sx={{
+                    marginLeft: 3,
+                    marginRight: 3,
+                    fontSize: 18,
+                    cursor: 'pointer',
+                  }}
                 >
                   {'HOME'}
                 </Link>
@@ -100,11 +106,15 @@ const DrawerNav = ({ isOwner }: Props) => {
               <Grid>
                 <Link
                   className="home-nav-link"
-                  href="#"
                   underline="none"
                   onClick={handleClickMarketplace}
                   color={mainTheme.textColor}
-                  sx={{ marginLeft: 3, marginRight: 3, fontSize: 18 }}
+                  sx={{
+                    marginLeft: 3,
+                    marginRight: 3,
+                    fontSize: 18,
+                    cursor: 'pointer',
+                  }}
                 >
                   {'MARKET'}
                 </Link>
@@ -114,11 +124,15 @@ const DrawerNav = ({ isOwner }: Props) => {
               <Grid>
                 <Link
                   className="home-nav-link"
-                  href="#"
                   underline="none"
                   onClick={handleClickMyNFTs}
                   color={mainTheme.textColor}
-                  sx={{ marginLeft: 3, marginRight: 3, fontSize: 18 }}
+                  sx={{
+                    marginLeft: 3,
+                    marginRight: 3,
+                    fontSize: 18,
+                    cursor: 'pointer',
+                  }}
                 >
                   {'MY NFTS'}
                 </Link>
@@ -128,11 +142,15 @@ const DrawerNav = ({ isOwner }: Props) => {
               <Grid>
                 <Link
                   className="home-nav-link"
-                  href="#"
                   underline="none"
                   onClick={handleClickClaim}
                   color={mainTheme.textColor}
-                  sx={{ marginLeft: 3, marginRight: 3, fontSize: 18 }}
+                  sx={{
+                    marginLeft: 3,
+                    marginRight: 3,
+                    fontSize: 18,
+                    cursor: 'pointer',
+                  }}
                 >
                   {'CLAIM'}
                 </Link>
@@ -142,11 +160,15 @@ const DrawerNav = ({ isOwner }: Props) => {
               <Grid>
                 <Link
                   className="home-nav-link"
-                  href="#"
                   underline="none"
                   onClick={handleClickAbout}
                   color={mainTheme.textColor}
-                  sx={{ marginLeft: 3, marginRight: 3, fontSize: 18 }}
+                  sx={{
+                    marginLeft: 3,
+                    marginRight: 3,
+                    fontSize: 18,
+                    cursor: 'pointer',
+                  }}
                 >
                   {'ABOUT'}
                 </Link>

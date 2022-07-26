@@ -38,7 +38,7 @@
   "scripts": {
     "deploy": "npx hardhat run src/solidity/scripts/deploy.js --network localhost",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp build/index.html build/200.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

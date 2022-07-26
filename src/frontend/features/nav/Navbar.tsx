@@ -118,62 +118,56 @@ const Navbar = ({ web3Handler, account, isOwner }: Props) => {
               {isOwner && (
                 <Link
                   className="home-nav-link"
-                  href="#"
-                  underline="none"
                   onClick={() => navigate('mint')}
+                  underline="none"
                   color={mainTheme.textColor}
-                  sx={{ marginRight: 3 }}
+                  sx={{ marginRight: 3, cursor: 'pointer' }}
                 >
                   {'MINT'}
                 </Link>
               )}
               <Link
                 className="home-nav-link"
-                href="#"
+                onClick={() => navigate('/')}
                 underline="none"
-                onClick={() => navigate('home')}
                 color={mainTheme.textColor}
-                sx={{ marginRight: 3 }}
+                sx={{ marginRight: 3, cursor: 'pointer' }}
               >
                 {'HOME'}
               </Link>
               <Link
                 className="home-nav-link"
-                href="#"
-                underline="none"
                 onClick={() => navigate('market')}
+                underline="none"
                 color={mainTheme.textColor}
-                sx={{ marginRight: 3 }}
+                sx={{ marginRight: 3, cursor: 'pointer' }}
               >
                 {'MARKET'}
               </Link>
               <Link
                 className="home-nav-link"
-                href="#"
+                onClick={() => navigate('myNfts')}
                 underline="none"
-                onClick={() => navigate('mynfts')}
                 color={mainTheme.textColor}
-                sx={{ marginRight: 3 }}
+                sx={{ marginRight: 3, cursor: 'pointer' }}
               >
                 {'MY NFTS'}
               </Link>
               <Link
                 className="home-nav-link"
-                href="#"
-                underline="none"
                 onClick={() => navigate('claim')}
+                underline="none"
                 color={mainTheme.textColor}
-                sx={{ marginRight: 3 }}
+                sx={{ marginRight: 3, cursor: 'pointer' }}
               >
                 {'CLAIM'}
               </Link>
               <Link
                 className="home-nav-link"
-                href="#"
-                underline="none"
                 onClick={() => navigate('about')}
+                underline="none"
                 color={mainTheme.textColor}
-                sx={{ marginRight: 3 }}
+                sx={{ marginRight: 3, cursor: 'pointer' }}
               >
                 {'ABOUT'}
               </Link>

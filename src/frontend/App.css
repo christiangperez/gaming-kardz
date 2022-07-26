@@ -10,7 +10,7 @@ body {
   position: relative;
   display: block;
   transition: color 0.1s, background-color 0.1s;
-  color: #000;
+  color: #fff;
 }
 
 .home-nav-link::before {
