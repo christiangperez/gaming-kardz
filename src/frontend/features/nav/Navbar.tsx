@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -13,13 +13,12 @@ import {
   Grid,
   Snackbar,
   Alert,
-  Slide,
+  Slide
 } from '@mui/material';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import DrawerNav from './DrawerNav';
 import { IRootState } from '../../redux/store/store';
 import { useSnackbar } from 'notistack';
-import { useEffect } from 'react';
 import { mainTheme } from '../../common/mainTheme';
 import AppLogo from '../../assets/app/logo.png';
 
@@ -112,7 +111,7 @@ const Navbar = ({ web3Handler, account, isOwner }: Props) => {
               sx={{
                 display: 'flex',
                 justifyContent: 'center',
-                alignItems: 'center',
+                alignItems: 'center'
               }}
             >
               {isOwner && (

@@ -14,7 +14,7 @@ import {
   CardMedia,
   Button,
   Modal,
-  TextField,
+  TextField
 } from '@mui/material';
 import { ethers } from 'ethers';
 
@@ -22,7 +22,7 @@ import {
   getNFTItem,
   loadNFTTransactions,
   purchaseMarketplaceItem,
-  setItemOnSale,
+  setItemOnSale
 } from '../../../redux/actions/marketActions';
 import { IRootState } from '../../../redux/store/store';
 import { INFTItem } from '../../../interfaces/marketplaceInterfaces';
@@ -38,7 +38,7 @@ export const NFTDetailScreen = () => {
     account,
     loadingSetItemOnSale,
     loadingPurchaseItem,
-    nftTransactions,
+    nftTransactions
   } = useSelector((state: IRootState) => state.market);
   const { idNft } = useParams();
   const navigate = useNavigate();
@@ -149,10 +149,10 @@ export const NFTDetailScreen = () => {
                     transform: 'translate(-50%, -50%)',
                     width: 400,
                     boxShadow: 24,
-                    p: 4,
+                    p: 4
                   }}
                   style={{
-                    background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`,
+                    background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`
                   }}
                 >
                   <Typography
@@ -168,7 +168,7 @@ export const NFTDetailScreen = () => {
                     color={mainTheme.textColor}
                     sx={{ mt: 2 }}
                   >
-                    Remember you can't change the price. When you put on sale
+                    Remember you can not change the price. When you put on sale
                     the token, you need to wait to someone buy your token.
                   </Typography>
                   <TextField
@@ -180,7 +180,7 @@ export const NFTDetailScreen = () => {
                     onChange={(p) => setPrice(p.target.value)}
                     sx={{ input: { color: 'white' }, marginTop: 4 }}
                     InputLabelProps={{
-                      style: { color: mainTheme.textColor },
+                      style: { color: mainTheme.textColor }
                     }}
                   />
                   <Button
@@ -201,7 +201,7 @@ export const NFTDetailScreen = () => {
                     top: '50%',
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
-                    width: 400,
+                    width: 400
                   }}
                   component="img"
                   src={activeNFT.image}
@@ -217,7 +217,7 @@ export const NFTDetailScreen = () => {
                       activeNFT.latestPrice > 0
                         ? mainTheme.terciaryColor
                         : mainTheme.primaryColor
-                    }, ${mainTheme.secondaryColor})`,
+                    }, ${mainTheme.secondaryColor})`
                   }}
                 >
                   <CardActionArea onClick={handleClickOpenImage}>
@@ -238,7 +238,7 @@ export const NFTDetailScreen = () => {
                 md={8}
                 sx={{ borderRadius: 8, pt: 1, pb: 1, pl: 3, pr: 3 }}
                 style={{
-                  background: `linear-gradient(to right bottom, ${mainTheme.terciaryColor}, ${mainTheme.secondaryColor})`,
+                  background: `linear-gradient(to right bottom, ${mainTheme.terciaryColor}, ${mainTheme.secondaryColor})`
                 }}
               >
                 <Grid
@@ -268,7 +268,7 @@ export const NFTDetailScreen = () => {
                     display="flex"
                     sx={{
                       justifyContent: { xs: 'center', md: 'normal' },
-                      marginTop: 1,
+                      marginTop: 1
                     }}
                   >
                     <Typography
@@ -285,7 +285,7 @@ export const NFTDetailScreen = () => {
                   sx={{
                     justifyContent: { xs: 'center', md: 'normal' },
                     marginTop: 1,
-                    marginBottom: 2,
+                    marginBottom: 2
                   }}
                 >
                   <Typography

@@ -5,7 +5,7 @@ import {
   Link,
   IconButton,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -138,7 +138,7 @@ export const Footer = () => {
         sx={{
           background: 'black',
           paddingBottom: 5,
-          paddingTop: { xs: 1, md: 5 },
+          paddingTop: { xs: 1, md: 5 }
         }}
         xs={12}
       >

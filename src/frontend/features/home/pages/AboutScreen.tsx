@@ -4,7 +4,7 @@ import {
   Typography,
   Stack,
   IconButton,
-  Link,
+  Link
 } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedinIcon from '@mui/icons-material/LinkedIn';
@@ -17,7 +17,7 @@ export const AboutScreen = () => {
         maxWidth="xl"
         sx={{ paddingTop: 2 }}
         style={{
-          background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`,
+          background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`
         }}
       >
         <Grid display="flex" justifyContent="center">

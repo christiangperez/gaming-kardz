@@ -11,14 +11,6 @@ export interface INFTItem {
   price: number;
   onSale: boolean;
 }
-
-export interface IJsonCollection {
-  collectionOwner: string;
-  earnsPercentage: number;
-  imagesUploaded: boolean;
-  nfts: Nft[];
-}
-
 export interface Nft {
   image: string;
   price: string;
@@ -26,4 +18,11 @@ export interface Nft {
   team: string;
   game: string;
   description: string;
+}
+
+export interface IJsonCollection {
+  collectionOwner: string;
+  earnsPercentage: number;
+  imagesUploaded: boolean;
+  nfts: Nft[];
 }

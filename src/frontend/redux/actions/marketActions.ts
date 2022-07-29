@@ -13,7 +13,7 @@ export const loadMarketplaceItems = () => {
       // Load all on sale items
       const itemCount = await marketplaceContract.itemCount();
 
-      let items: INFTItem[] = [];
+      const items: INFTItem[] = [];
 
       for (let i = 1; i <= itemCount; i++) {
         const item = await marketplaceContract.items(i);
@@ -64,7 +64,7 @@ export const loadMyNFTsItems = () => {
       const { nftContract, marketplaceContract, account } = getState().market;
 
       const itemCount = await marketplaceContract.itemCount();
-      let listedItems: INFTItem[] = [];
+      const listedItems: INFTItem[] = [];
       for (let indx = 1; indx <= itemCount; indx++) {
         const i = await marketplaceContract.items(indx);
         if (i.seller.toLowerCase() === account) {
@@ -76,7 +76,7 @@ export const loadMyNFTsItems = () => {
           // get total price of item (item price + fee)
           const totalPrice = await marketplaceContract.getTotalPrice(i.tokenId);
 
-          let item = {
+          const item = {
             totalPrice,
             latestPrice: i.latestPrice,
             tokenId: i.tokenId,
@@ -176,9 +176,7 @@ export const getContractOwner = () => {
       dispatch({
         type: 'setIsOwner',
         payload:
-          String(contractOwner).toLowerCase() === String(account).toLowerCase()
-            ? true
-            : false,
+          (String(contractOwner).toLowerCase() === String(account).toLowerCase()) === true
       });
     } catch (error) {
       const { enqueueSnackbar } = getState().market;
@@ -206,7 +204,7 @@ export const getNFTItem = (tokenId: any) => {
       // get total price of item (item price + fee)
       const totalPrice = await marketplaceContract.getTotalPrice(i.tokenId);
 
-      let item: INFTItem = {
+      const item: INFTItem = {
         totalPrice,
         latestPrice: i.latestPrice,
         tokenId: i.tokenId,
@@ -254,9 +252,9 @@ export const loadNFTTransactions = (tokenId: number) => {
       const purchases = await Promise.all(
         results.map(async (i: any) => {
           // fetch arguments from each result
-          let args = i.args;
+          const args = i.args;
 
-          let purchasedItem = {
+          const purchasedItem = {
             totalPrice: args.totalPrice,
             price: args.price,
             tokenId: args.tokenId,

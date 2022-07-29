@@ -8,7 +8,7 @@ import {
   TableRow,
   TableCell,
   TableBody,
-  Paper,
+  Paper
 } from '@mui/material';
 import { ethers } from 'ethers';
 import { useSelector } from 'react-redux';
@@ -33,7 +33,7 @@ export const NFTTransactions = () => {
         <TableContainer
           component={Paper}
           style={{
-            background: `linear-gradient(to right bottom, ${mainTheme.terciaryColor}, ${mainTheme.secondaryColor})`,
+            background: `linear-gradient(to right bottom, ${mainTheme.terciaryColor}, ${mainTheme.secondaryColor})`
           }}
         >
           <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -67,20 +67,20 @@ export const NFTTransactions = () => {
                 <TableRow
                   key={idx}
                   sx={{
-                    '&:last-child td, &:last-child th': { border: 0 },
+                    '&:last-child td, &:last-child th': { border: 0 }
                   }}
                 >
                   <TableCell
                     component="th"
                     scope="row"
                     sx={{
-                      color: 'white',
+                      color: 'white'
                     }}
                   >
                     <CompareArrowsIcon
                       sx={{
                         fontSize: 14,
-                        marginRight: 1,
+                        marginRight: 1
                       }}
                     />
                     Transfer

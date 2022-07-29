@@ -48,7 +48,7 @@ const DrawerNav = ({ isOwner }: Props) => {
         <Box
           sx={{ background: mainTheme.terciaryColor, height: '100%' }}
           style={{
-            background: `linear-gradient(to right top, ${mainTheme.terciaryColor}, #d0f177)`,
+            background: `linear-gradient(to right top, ${mainTheme.terciaryColor}, #d0f177)`
           }}
         >
           <Grid container sx={{ paddingLeft: 2, paddingTop: 3 }}>
@@ -76,7 +76,7 @@ const DrawerNav = ({ isOwner }: Props) => {
                       marginLeft: 3,
                       marginRight: 3,
                       fontSize: 18,
-                      cursor: 'pointer',
+                      cursor: 'pointer'
                     }}
                   >
                     {'MINT'}
@@ -95,7 +95,7 @@ const DrawerNav = ({ isOwner }: Props) => {
                     marginLeft: 3,
                     marginRight: 3,
                     fontSize: 18,
-                    cursor: 'pointer',
+                    cursor: 'pointer'
                   }}
                 >
                   {'HOME'}
@@ -113,7 +113,7 @@ const DrawerNav = ({ isOwner }: Props) => {
                     marginLeft: 3,
                     marginRight: 3,
                     fontSize: 18,
-                    cursor: 'pointer',
+                    cursor: 'pointer'
                   }}
                 >
                   {'MARKET'}
@@ -131,7 +131,7 @@ const DrawerNav = ({ isOwner }: Props) => {
                     marginLeft: 3,
                     marginRight: 3,
                     fontSize: 18,
-                    cursor: 'pointer',
+                    cursor: 'pointer'
                   }}
                 >
                   {'MY NFTS'}
@@ -149,7 +149,7 @@ const DrawerNav = ({ isOwner }: Props) => {
                     marginLeft: 3,
                     marginRight: 3,
                     fontSize: 18,
-                    cursor: 'pointer',
+                    cursor: 'pointer'
                   }}
                 >
                   {'CLAIM'}
@@ -167,7 +167,7 @@ const DrawerNav = ({ isOwner }: Props) => {
                     marginLeft: 3,
                     marginRight: 3,
                     fontSize: 18,
-                    cursor: 'pointer',
+                    cursor: 'pointer'
                   }}
                 >
                   {'ABOUT'}
