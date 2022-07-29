@@ -1,0 +1,88 @@
+name: Deployment Pipeline
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+    types: [opened, synchronize]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+
+  avoid_reduncy:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Cancel previous redundant Builds
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
+  format_lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install Prettier Formatter
+        run: npm install --unsafe-perm=true -g prettier
+      - name: Install Eslint
+        run: npm install --unsafe-perm=true -g eslint
+      - name: Install Eslint Plugin React
+        run: npm install eslint-plugin-react@latest --save-dev
+      - name: Install Eslint Config Prettier
+        run: npm install --unsafe-perm=true -g eslint-config-prettier
+      - name: Format
+        run: npm run format
+      - name: Lint
+        run: npm run lint
+
+  # test:
+  #   needs: [format_lint]
+  #   runs-on: ubuntu-22.04
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with:
+  #         fetch-depth: 0
+  #     - name: Install dependencies
+  #       run: npm ci
+  #     - name: test
+  #       run: npm test
+
+  build:
+    needs: [format_lint]
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install dependencies
+        run: npm ci
+      - name: Builds
+        run: npm run build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: build
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install Netlify CLI package
+        run: npm install --unsafe-perm=true -g netlify-cli
+      - uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: build
+      - name: Deploy to Netlify
+        if: ${{ github.event_name == 'push' }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: npx netlify-cli deploy --dir=build --prod
