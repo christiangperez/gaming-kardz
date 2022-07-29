@@ -11,7 +11,6 @@ on:
   workflow_dispatch:
 
 jobs:
-
   avoid_reduncy:
     runs-on: ubuntu-22.04
     steps:

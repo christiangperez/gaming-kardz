@@ -57,9 +57,7 @@
             "evm.methodIdentifiers",
             "metadata"
           ],
-          "": [
-            "ast"
-          ]
+          "": ["ast"]
         }
       }
     }
@@ -33694,33 +33692,15 @@
         "ast": {
           "absolutePath": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
           "exportedSymbols": {
-            "Address": [
-              1449
-            ],
-            "Context": [
-              1471
-            ],
-            "ERC165": [
-              1698
-            ],
-            "ERC721": [
-              865
-            ],
-            "IERC165": [
-              1710
-            ],
-            "IERC721": [
-              981
-            ],
-            "IERC721Metadata": [
-              1154
-            ],
-            "IERC721Receiver": [
-              999
-            ],
-            "Strings": [
-              1674
-            ]
+            "Address": [1449],
+            "Context": [1471],
+            "ERC165": [1698],
+            "ERC721": [865],
+            "IERC165": [1710],
+            "IERC721": [981],
+            "IERC721Metadata": [1154],
+            "IERC721Receiver": [999],
+            "Strings": [1674]
           },
           "id": 866,
           "license": "MIT",
@@ -33728,12 +33708,7 @@
           "nodes": [
             {
               "id": 1,
-              "literals": [
-                "solidity",
-                "^",
-                "0.8",
-                ".0"
-              ],
+              "literals": ["solidity", "^", "0.8", ".0"],
               "nodeType": "PragmaDirective",
               "src": "107:23:0"
             },
@@ -33883,14 +33858,7 @@
               },
               "fullyImplemented": true,
               "id": 865,
-              "linearizedBaseContracts": [
-                865,
-                1154,
-                981,
-                1698,
-                1710,
-                1471
-              ],
+              "linearizedBaseContracts": [865, 1154, 981, 1698, 1710, 1471],
               "name": "ERC721",
               "nameLocation": "637:6:0",
               "nodeType": "ContractDefinition",
@@ -34380,10 +34348,7 @@
                   "visibility": "public"
                 },
                 {
-                  "baseFunctions": [
-                    1697,
-                    1709
-                  ],
+                  "baseFunctions": [1697, 1709],
                   "body": {
                     "id": 92,
                     "nodeType": "Block",
@@ -34790,9 +34755,7 @@
                   "visibility": "public"
                 },
                 {
-                  "baseFunctions": [
-                    906
-                  ],
+                  "baseFunctions": [906],
                   "body": {
                     "id": 116,
                     "nodeType": "Block",
@@ -34922,10 +34885,7 @@
                             "id": 102,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "2020:7:0",
                             "typeDescriptions": {
@@ -35093,18 +35053,14 @@
                   "visibility": "public"
                 },
                 {
-                  "baseFunctions": [
-                    914
-                  ],
+                  "baseFunctions": [914],
                   "body": {
                     "id": 144,
                     "nodeType": "Block",
                     "src": "2272:154:0",
                     "statements": [
                       {
-                        "assignments": [
-                          127
-                        ],
+                        "assignments": [127],
                         "declarations": [
                           {
                             "constant": false,
@@ -35300,10 +35256,7 @@
                             "id": 132,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "2324:7:0",
                             "typeDescriptions": {
@@ -35446,9 +35399,7 @@
                   "visibility": "public"
                 },
                 {
-                  "baseFunctions": [
-                    1139
-                  ],
+                  "baseFunctions": [1139],
                   "body": {
                     "id": 154,
                     "nodeType": "Block",
@@ -35541,9 +35492,7 @@
                   "visibility": "public"
                 },
                 {
-                  "baseFunctions": [
-                    1145
-                  ],
+                  "baseFunctions": [1145],
                   "body": {
                     "id": 164,
                     "nodeType": "Block",
@@ -35636,9 +35585,7 @@
                   "visibility": "public"
                 },
                 {
-                  "baseFunctions": [
-                    1153
-                  ],
+                  "baseFunctions": [1153],
                   "body": {
                     "id": 206,
                     "nodeType": "Block",
@@ -35726,10 +35673,7 @@
                             "id": 174,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "2916:7:0",
                             "typeDescriptions": {
@@ -35757,9 +35701,7 @@
                         "src": "2916:76:0"
                       },
                       {
-                        "assignments": [
-                          182
-                        ],
+                        "assignments": [182],
                         "declarations": [
                           {
                             "constant": false,
@@ -36303,18 +36245,14 @@
                   "visibility": "internal"
                 },
                 {
-                  "baseFunctions": [
-                    954
-                  ],
+                  "baseFunctions": [954],
                   "body": {
                     "id": 258,
                     "nodeType": "Block",
                     "src": "3608:331:0",
                     "statements": [
                       {
-                        "assignments": [
-                          226
-                        ],
+                        "assignments": [226],
                         "declarations": [
                           {
                             "constant": false,
@@ -36488,10 +36426,7 @@
                             "id": 232,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "3667:7:0",
                             "typeDescriptions": {
@@ -36712,10 +36647,7 @@
                             "id": 239,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "3735:7:0",
                             "typeDescriptions": {
@@ -36908,9 +36840,7 @@
                   "visibility": "public"
                 },
                 {
-                  "baseFunctions": [
-                    970
-                  ],
+                  "baseFunctions": [970],
                   "body": {
                     "id": 279,
                     "nodeType": "Block",
@@ -36998,10 +36928,7 @@
                             "id": 268,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "4095:7:0",
                             "typeDescriptions": {
@@ -37169,9 +37096,7 @@
                   "visibility": "public"
                 },
                 {
-                  "baseFunctions": [
-                    962
-                  ],
+                  "baseFunctions": [962],
                   "body": {
                     "id": 296,
                     "nodeType": "Block",
@@ -37377,9 +37302,7 @@
                   "visibility": "public"
                 },
                 {
-                  "baseFunctions": [
-                    980
-                  ],
+                  "baseFunctions": [980],
                   "body": {
                     "id": 314,
                     "nodeType": "Block",
@@ -37579,9 +37502,7 @@
                   "visibility": "public"
                 },
                 {
-                  "baseFunctions": [
-                    946
-                  ],
+                  "baseFunctions": [946],
                   "body": {
                     "id": 341,
                     "nodeType": "Block",
@@ -37703,10 +37624,7 @@
                             "id": 326,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "4908:7:0",
                             "typeDescriptions": {
@@ -37943,9 +37861,7 @@
                   "visibility": "public"
                 },
                 {
-                  "baseFunctions": [
-                    936
-                  ],
+                  "baseFunctions": [936],
                   "body": {
                     "id": 360,
                     "nodeType": "Block",
@@ -38029,10 +37945,7 @@
                             "id": 353,
                             "name": "safeTransferFrom",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              361,
-                              391
-                            ],
+                            "overloadedDeclarations": [361, 391],
                             "referencedDeclaration": 391,
                             "src": "5256:16:0",
                             "typeDescriptions": {
@@ -38184,9 +38097,7 @@
                   "visibility": "public"
                 },
                 {
-                  "baseFunctions": [
-                    926
-                  ],
+                  "baseFunctions": [926],
                   "body": {
                     "id": 390,
                     "nodeType": "Block",
@@ -38308,10 +38219,7 @@
                             "id": 374,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "5529:7:0",
                             "typeDescriptions": {
@@ -38811,10 +38719,7 @@
                             "id": 409,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "6739:7:0",
                             "typeDescriptions": {
@@ -39289,10 +39194,7 @@
                             "id": 448,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "7552:7:0",
                             "typeDescriptions": {
@@ -39320,9 +39222,7 @@
                         "src": "7552:73:0"
                       },
                       {
-                        "assignments": [
-                          456
-                        ],
+                        "assignments": [456],
                         "declarations": [
                           {
                             "constant": false,
@@ -39847,10 +39747,7 @@
                             "id": 487,
                             "name": "_safeMint",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              494,
-                              523
-                            ],
+                            "overloadedDeclarations": [494, 523],
                             "referencedDeclaration": 523,
                             "src": "8192:9:0",
                             "typeDescriptions": {
@@ -40219,10 +40116,7 @@
                             "id": 509,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "8599:7:0",
                             "typeDescriptions": {
@@ -40495,10 +40389,7 @@
                             "id": 531,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "9150:7:0",
                             "typeDescriptions": {
@@ -40622,10 +40513,7 @@
                             "id": 541,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "9221:7:0",
                             "typeDescriptions": {
@@ -41287,9 +41175,7 @@
                     "src": "9772:357:0",
                     "statements": [
                       {
-                        "assignments": [
-                          596
-                        ],
+                        "assignments": [596],
                         "declarations": [
                           {
                             "constant": false,
@@ -42226,10 +42112,7 @@
                             "id": 659,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "10572:7:0",
                             "typeDescriptions": {
@@ -42380,10 +42263,7 @@
                             "id": 669,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "10663:7:0",
                             "typeDescriptions": {
@@ -43492,10 +43372,7 @@
                             "id": 758,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "11608:7:0",
                             "typeDescriptions": {
@@ -44227,8 +44104,7 @@
                                                   "name": "revert",
                                                   "nodeType": "Identifier",
                                                   "overloadedDeclarations": [
-                                                    -19,
-                                                    -19
+                                                    -19, -19
                                                   ],
                                                   "referencedDeclaration": -19,
                                                   "src": "12821:6:0",
@@ -44903,12 +44779,8 @@
         "ast": {
           "absolutePath": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
           "exportedSymbols": {
-            "IERC165": [
-              1710
-            ],
-            "IERC721": [
-              981
-            ]
+            "IERC165": [1710],
+            "IERC721": [981]
           },
           "id": 982,
           "license": "MIT",
@@ -44916,12 +44788,7 @@
           "nodes": [
             {
               "id": 867,
-              "literals": [
-                "solidity",
-                "^",
-                "0.8",
-                ".0"
-              ],
+              "literals": ["solidity", "^", "0.8", ".0"],
               "nodeType": "PragmaDirective",
               "src": "108:23:1"
             },
@@ -44963,10 +44830,7 @@
               },
               "fullyImplemented": false,
               "id": 981,
-              "linearizedBaseContracts": [
-                981,
-                1710
-              ],
+              "linearizedBaseContracts": [981, 1710],
               "name": "IERC721",
               "nameLocation": "260:7:1",
               "nodeType": "ContractDefinition",
@@ -46250,9 +46114,7 @@
         "ast": {
           "absolutePath": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
           "exportedSymbols": {
-            "IERC721Receiver": [
-              999
-            ]
+            "IERC721Receiver": [999]
           },
           "id": 1000,
           "license": "MIT",
@@ -46260,12 +46122,7 @@
           "nodes": [
             {
               "id": 983,
-              "literals": [
-                "solidity",
-                "^",
-                "0.8",
-                ".0"
-              ],
+              "literals": ["solidity", "^", "0.8", ".0"],
               "nodeType": "PragmaDirective",
               "src": "116:23:2"
             },
@@ -46282,9 +46139,7 @@
               },
               "fullyImplemented": false,
               "id": 999,
-              "linearizedBaseContracts": [
-                999
-              ],
+              "linearizedBaseContracts": [999],
               "name": "IERC721Receiver",
               "nameLocation": "304:15:2",
               "nodeType": "ContractDefinition",
@@ -46475,36 +46330,16 @@
         "ast": {
           "absolutePath": "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
           "exportedSymbols": {
-            "Address": [
-              1449
-            ],
-            "Context": [
-              1471
-            ],
-            "ERC165": [
-              1698
-            ],
-            "ERC721": [
-              865
-            ],
-            "ERC721URIStorage": [
-              1127
-            ],
-            "IERC165": [
-              1710
-            ],
-            "IERC721": [
-              981
-            ],
-            "IERC721Metadata": [
-              1154
-            ],
-            "IERC721Receiver": [
-              999
-            ],
-            "Strings": [
-              1674
-            ]
+            "Address": [1449],
+            "Context": [1471],
+            "ERC165": [1698],
+            "ERC721": [865],
+            "ERC721URIStorage": [1127],
+            "IERC165": [1710],
+            "IERC721": [981],
+            "IERC721Metadata": [1154],
+            "IERC721Receiver": [999],
+            "Strings": [1674]
           },
           "id": 1128,
           "license": "MIT",
@@ -46512,12 +46347,7 @@
           "nodes": [
             {
               "id": 1001,
-              "literals": [
-                "solidity",
-                "^",
-                "0.8",
-                ".0"
-              ],
+              "literals": ["solidity", "^", "0.8", ".0"],
               "nodeType": "PragmaDirective",
               "src": "113:23:3"
             },
@@ -46560,13 +46390,7 @@
               "fullyImplemented": false,
               "id": 1127,
               "linearizedBaseContracts": [
-                1127,
-                865,
-                1154,
-                981,
-                1698,
-                1710,
-                1471
+                1127, 865, 1154, 981, 1698, 1710, 1471
               ],
               "name": "ERC721URIStorage",
               "nameLocation": "251:16:3",
@@ -46641,9 +46465,7 @@
                   "visibility": "private"
                 },
                 {
-                  "baseFunctions": [
-                    207
-                  ],
+                  "baseFunctions": [207],
                   "body": {
                     "id": 1073,
                     "nodeType": "Block",
@@ -46731,10 +46553,7 @@
                             "id": 1021,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "565:7:3",
                             "typeDescriptions": {
@@ -46762,9 +46581,7 @@
                         "src": "565:78:3"
                       },
                       {
-                        "assignments": [
-                          1029
-                        ],
+                        "assignments": [1029],
                         "declarations": [
                           {
                             "constant": false,
@@ -46836,9 +46653,7 @@
                         "src": "654:45:3"
                       },
                       {
-                        "assignments": [
-                          1035
-                        ],
+                        "assignments": [1035],
                         "declarations": [
                           {
                             "constant": false,
@@ -47533,10 +47348,7 @@
                             "id": 1082,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "1368:7:3",
                             "typeDescriptions": {
@@ -47720,9 +47532,7 @@
                   "visibility": "internal"
                 },
                 {
-                  "baseFunctions": [
-                    649
-                  ],
+                  "baseFunctions": [649],
                   "body": {
                     "id": 1125,
                     "nodeType": "Block",
@@ -48075,15 +47885,9 @@
         "ast": {
           "absolutePath": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
           "exportedSymbols": {
-            "IERC165": [
-              1710
-            ],
-            "IERC721": [
-              981
-            ],
-            "IERC721Metadata": [
-              1154
-            ]
+            "IERC165": [1710],
+            "IERC721": [981],
+            "IERC721Metadata": [1154]
           },
           "id": 1155,
           "license": "MIT",
@@ -48091,12 +47895,7 @@
           "nodes": [
             {
               "id": 1129,
-              "literals": [
-                "solidity",
-                "^",
-                "0.8",
-                ".0"
-              ],
+              "literals": ["solidity", "^", "0.8", ".0"],
               "nodeType": "PragmaDirective",
               "src": "112:23:4"
             },
@@ -48138,11 +47937,7 @@
               },
               "fullyImplemented": false,
               "id": 1154,
-              "linearizedBaseContracts": [
-                1154,
-                981,
-                1710
-              ],
+              "linearizedBaseContracts": [1154, 981, 1710],
               "name": "IERC721Metadata",
               "nameLocation": "307:15:4",
               "nodeType": "ContractDefinition",
@@ -48372,9 +48167,7 @@
         "ast": {
           "absolutePath": "@openzeppelin/contracts/utils/Address.sol",
           "exportedSymbols": {
-            "Address": [
-              1449
-            ]
+            "Address": [1449]
           },
           "id": 1450,
           "license": "MIT",
@@ -48382,12 +48175,7 @@
           "nodes": [
             {
               "id": 1156,
-              "literals": [
-                "solidity",
-                "^",
-                "0.8",
-                ".1"
-              ],
+              "literals": ["solidity", "^", "0.8", ".1"],
               "nodeType": "PragmaDirective",
               "src": "101:23:5"
             },
@@ -48404,9 +48192,7 @@
               },
               "fullyImplemented": true,
               "id": 1449,
-              "linearizedBaseContracts": [
-                1449
-              ],
+              "linearizedBaseContracts": [1449],
               "name": "Address",
               "nameLocation": "202:7:5",
               "nodeType": "ContractDefinition",
@@ -48727,10 +48513,7 @@
                             "id": 1180,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "2493:7:5",
                             "typeDescriptions": {
@@ -48758,10 +48541,7 @@
                         "src": "2493:73:5"
                       },
                       {
-                        "assignments": [
-                          1192,
-                          null
-                        ],
+                        "assignments": [1192, null],
                         "declarations": [
                           {
                             "constant": false,
@@ -48856,9 +48636,7 @@
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "names": [
-                              "value"
-                            ],
+                            "names": ["value"],
                             "nodeType": "FunctionCallOptions",
                             "options": [
                               {
@@ -48944,10 +48722,7 @@
                             "id": 1200,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "2639:7:5",
                             "typeDescriptions": {
@@ -49131,10 +48906,7 @@
                             "id": 1216,
                             "name": "functionCall",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              1223,
-                              1243
-                            ],
+                            "overloadedDeclarations": [1223, 1243],
                             "referencedDeclaration": 1243,
                             "src": "3572:12:5",
                             "typeDescriptions": {
@@ -49363,10 +49135,7 @@
                             "id": 1235,
                             "name": "functionCallWithValue",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              1263,
-                              1313
-                            ],
+                            "overloadedDeclarations": [1263, 1313],
                             "referencedDeclaration": 1313,
                             "src": "4025:21:5",
                             "typeDescriptions": {
@@ -49622,10 +49391,7 @@
                             "id": 1255,
                             "name": "functionCallWithValue",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              1263,
-                              1313
-                            ],
+                            "overloadedDeclarations": [1263, 1313],
                             "referencedDeclaration": 1313,
                             "src": "4606:21:5",
                             "typeDescriptions": {
@@ -49937,10 +49703,7 @@
                             "id": 1277,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "5137:7:5",
                             "typeDescriptions": {
@@ -50049,10 +49812,7 @@
                             "id": 1288,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "5228:7:5",
                             "typeDescriptions": {
@@ -50080,10 +49840,7 @@
                         "src": "5228:60:5"
                       },
                       {
-                        "assignments": [
-                          1296,
-                          1298
-                        ],
+                        "assignments": [1296, 1298],
                         "declarations": [
                           {
                             "constant": false,
@@ -50200,9 +49957,7 @@
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
-                            "names": [
-                              "value"
-                            ],
+                            "names": ["value"],
                             "nodeType": "FunctionCallOptions",
                             "options": [
                               {
@@ -50567,10 +50322,7 @@
                             "id": 1323,
                             "name": "functionStaticCall",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              1330,
-                              1365
-                            ],
+                            "overloadedDeclarations": [1330, 1365],
                             "referencedDeclaration": 1365,
                             "src": "5741:18:5",
                             "typeDescriptions": {
@@ -50803,10 +50555,7 @@
                             "id": 1342,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "6173:7:5",
                             "typeDescriptions": {
@@ -50834,10 +50583,7 @@
                         "src": "6173:67:5"
                       },
                       {
-                        "assignments": [
-                          1350,
-                          1352
-                        ],
+                        "assignments": [1350, 1352],
                         "declarations": [
                           {
                             "constant": false,
@@ -51258,10 +51004,7 @@
                             "id": 1375,
                             "name": "functionDelegateCall",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              1382,
-                              1417
-                            ],
+                            "overloadedDeclarations": [1382, 1417],
                             "referencedDeclaration": 1417,
                             "src": "6684:20:5",
                             "typeDescriptions": {
@@ -51494,10 +51237,7 @@
                             "id": 1394,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "7119:7:5",
                             "typeDescriptions": {
@@ -51525,10 +51265,7 @@
                         "src": "7119:69:5"
                       },
                       {
-                        "assignments": [
-                          1402,
-                          1404
-                        ],
+                        "assignments": [1402, 1404],
                         "declarations": [
                           {
                             "constant": false,
@@ -51997,10 +51734,7 @@
                                         "id": 1439,
                                         "name": "revert",
                                         "nodeType": "Identifier",
-                                        "overloadedDeclarations": [
-                                          -19,
-                                          -19
-                                        ],
+                                        "overloadedDeclarations": [-19, -19],
                                         "referencedDeclaration": -19,
                                         "src": "8202:6:5",
                                         "typeDescriptions": {
@@ -52327,9 +52061,7 @@
         "ast": {
           "absolutePath": "@openzeppelin/contracts/utils/Context.sol",
           "exportedSymbols": {
-            "Context": [
-              1471
-            ]
+            "Context": [1471]
           },
           "id": 1472,
           "license": "MIT",
@@ -52337,12 +52069,7 @@
           "nodes": [
             {
               "id": 1451,
-              "literals": [
-                "solidity",
-                "^",
-                "0.8",
-                ".0"
-              ],
+              "literals": ["solidity", "^", "0.8", ".0"],
               "nodeType": "PragmaDirective",
               "src": "86:23:6"
             },
@@ -52359,9 +52086,7 @@
               },
               "fullyImplemented": true,
               "id": 1471,
-              "linearizedBaseContracts": [
-                1471
-              ],
+              "linearizedBaseContracts": [1471],
               "name": "Context",
               "nameLocation": "626:7:6",
               "nodeType": "ContractDefinition",
@@ -52567,9 +52292,7 @@
         "ast": {
           "absolutePath": "@openzeppelin/contracts/utils/Strings.sol",
           "exportedSymbols": {
-            "Strings": [
-              1674
-            ]
+            "Strings": [1674]
           },
           "id": 1675,
           "license": "MIT",
@@ -52577,12 +52300,7 @@
           "nodes": [
             {
               "id": 1473,
-              "literals": [
-                "solidity",
-                "^",
-                "0.8",
-                ".0"
-              ],
+              "literals": ["solidity", "^", "0.8", ".0"],
               "nodeType": "PragmaDirective",
               "src": "86:23:7"
             },
@@ -52599,9 +52317,7 @@
               },
               "fullyImplemented": true,
               "id": 1674,
-              "linearizedBaseContracts": [
-                1674
-              ],
+              "linearizedBaseContracts": [1674],
               "name": "Strings",
               "nameLocation": "154:7:7",
               "nodeType": "ContractDefinition",
@@ -52736,9 +52452,7 @@
                         }
                       },
                       {
-                        "assignments": [
-                          1493
-                        ],
+                        "assignments": [1493],
                         "declarations": [
                           {
                             "constant": false,
@@ -52785,9 +52499,7 @@
                         "src": "657:20:7"
                       },
                       {
-                        "assignments": [
-                          1497
-                        ],
+                        "assignments": [1497],
                         "declarations": [
                           {
                             "constant": false,
@@ -52959,9 +52671,7 @@
                         "src": "711:75:7"
                       },
                       {
-                        "assignments": [
-                          1512
-                        ],
+                        "assignments": [1512],
                         "declarations": [
                           {
                             "constant": false,
@@ -53712,9 +53422,7 @@
                         }
                       },
                       {
-                        "assignments": [
-                          1572
-                        ],
+                        "assignments": [1572],
                         "declarations": [
                           {
                             "constant": false,
@@ -53761,9 +53469,7 @@
                         "src": "1283:20:7"
                       },
                       {
-                        "assignments": [
-                          1576
-                        ],
+                        "assignments": [1576],
                         "declarations": [
                           {
                             "constant": false,
@@ -53992,10 +53698,7 @@
                             "id": 1591,
                             "name": "toHexString",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              1597,
-                              1673
-                            ],
+                            "overloadedDeclarations": [1597, 1673],
                             "referencedDeclaration": 1673,
                             "src": "1432:11:7",
                             "typeDescriptions": {
@@ -54119,9 +53822,7 @@
                     "src": "1678:351:7",
                     "statements": [
                       {
-                        "assignments": [
-                          1608
-                        ],
+                        "assignments": [1608],
                         "declarations": [
                           {
                             "constant": false,
@@ -54664,9 +54365,7 @@
                         },
                         "id": 1659,
                         "initializationExpression": {
-                          "assignments": [
-                            1631
-                          ],
+                          "assignments": [1631],
                           "declarations": [
                             {
                               "constant": false,
@@ -54895,10 +54594,7 @@
                             "id": 1660,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "1936:7:7",
                             "typeDescriptions": {
@@ -55117,12 +54813,8 @@
         "ast": {
           "absolutePath": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
           "exportedSymbols": {
-            "ERC165": [
-              1698
-            ],
-            "IERC165": [
-              1710
-            ]
+            "ERC165": [1698],
+            "IERC165": [1710]
           },
           "id": 1699,
           "license": "MIT",
@@ -55130,12 +54822,7 @@
           "nodes": [
             {
               "id": 1676,
-              "literals": [
-                "solidity",
-                "^",
-                "0.8",
-                ".0"
-              ],
+              "literals": ["solidity", "^", "0.8", ".0"],
               "nodeType": "PragmaDirective",
               "src": "99:23:8"
             },
@@ -55177,18 +54864,13 @@
               },
               "fullyImplemented": true,
               "id": 1698,
-              "linearizedBaseContracts": [
-                1698,
-                1710
-              ],
+              "linearizedBaseContracts": [1698, 1710],
               "name": "ERC165",
               "nameLocation": "744:6:8",
               "nodeType": "ContractDefinition",
               "nodes": [
                 {
-                  "baseFunctions": [
-                    1709
-                  ],
+                  "baseFunctions": [1709],
                   "body": {
                     "id": 1696,
                     "nodeType": "Block",
@@ -55402,9 +55084,7 @@
         "ast": {
           "absolutePath": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
           "exportedSymbols": {
-            "IERC165": [
-              1710
-            ]
+            "IERC165": [1710]
           },
           "id": 1711,
           "license": "MIT",
@@ -55412,12 +55092,7 @@
           "nodes": [
             {
               "id": 1700,
-              "literals": [
-                "solidity",
-                "^",
-                "0.8",
-                ".0"
-              ],
+              "literals": ["solidity", "^", "0.8", ".0"],
               "nodeType": "PragmaDirective",
               "src": "100:23:9"
             },
@@ -55434,9 +55109,7 @@
               },
               "fullyImplemented": false,
               "id": 1710,
-              "linearizedBaseContracts": [
-                1710
-              ],
+              "linearizedBaseContracts": [1710],
               "name": "IERC165",
               "nameLocation": "415:7:9",
               "nodeType": "ContractDefinition",
@@ -55544,42 +55217,18 @@
         "ast": {
           "absolutePath": "src/solidity/contracts/NFT.sol",
           "exportedSymbols": {
-            "Address": [
-              1449
-            ],
-            "Context": [
-              1471
-            ],
-            "ERC165": [
-              1698
-            ],
-            "ERC721": [
-              865
-            ],
-            "ERC721URIStorage": [
-              1127
-            ],
-            "IERC165": [
-              1710
-            ],
-            "IERC721": [
-              981
-            ],
-            "IERC721Metadata": [
-              1154
-            ],
-            "IERC721Receiver": [
-              999
-            ],
-            "INFT": [
-              1874
-            ],
-            "NFT": [
-              1860
-            ],
-            "Strings": [
-              1674
-            ]
+            "Address": [1449],
+            "Context": [1471],
+            "ERC165": [1698],
+            "ERC721": [865],
+            "ERC721URIStorage": [1127],
+            "IERC165": [1710],
+            "IERC721": [981],
+            "IERC721Metadata": [1154],
+            "IERC721Receiver": [999],
+            "INFT": [1874],
+            "NFT": [1860],
+            "Strings": [1674]
           },
           "id": 1861,
           "license": "MIT",
@@ -55587,12 +55236,7 @@
           "nodes": [
             {
               "id": 1712,
-              "literals": [
-                "solidity",
-                "^",
-                "0.8",
-                ".4"
-              ],
+              "literals": ["solidity", "^", "0.8", ".4"],
               "nodeType": "PragmaDirective",
               "src": "32:23:10"
             },
@@ -55653,14 +55297,7 @@
               "fullyImplemented": true,
               "id": 1860,
               "linearizedBaseContracts": [
-                1860,
-                1127,
-                865,
-                1154,
-                981,
-                1698,
-                1710,
-                1471
+                1860, 1127, 865, 1154, 981, 1698, 1710, 1471
               ],
               "name": "NFT",
               "nameLocation": "237:3:10",
@@ -56104,10 +55741,7 @@
                             "id": 1760,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "825:7:10",
                             "typeDescriptions": {
@@ -56208,10 +55842,7 @@
                             "id": 1770,
                             "name": "_safeMint",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              494,
-                              523
-                            ],
+                            "overloadedDeclarations": [494, 523],
                             "referencedDeclaration": 494,
                             "src": "916:9:10",
                             "typeDescriptions": {
@@ -56754,10 +56385,7 @@
                             "id": 1802,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "2204:7:10",
                             "typeDescriptions": {
@@ -57091,10 +56719,7 @@
                             "id": 1828,
                             "name": "require",
                             "nodeType": "Identifier",
-                            "overloadedDeclarations": [
-                              -18,
-                              -18
-                            ],
+                            "overloadedDeclarations": [-18, -18],
                             "referencedDeclaration": -18,
                             "src": "2433:7:10",
                             "typeDescriptions": {
@@ -57421,9 +57046,7 @@
         "ast": {
           "absolutePath": "src/solidity/interfaces/INFT.sol",
           "exportedSymbols": {
-            "INFT": [
-              1874
-            ]
+            "INFT": [1874]
           },
           "id": 1875,
           "license": "MIT",
@@ -57431,12 +57054,7 @@
           "nodes": [
             {
               "id": 1862,
-              "literals": [
-                "solidity",
-                "^",
-                "0.8",
-                ".0"
-              ],
+              "literals": ["solidity", "^", "0.8", ".0"],
               "nodeType": "PragmaDirective",
               "src": "32:23:11"
             },
@@ -57447,9 +57065,7 @@
               "contractKind": "interface",
               "fullyImplemented": false,
               "id": 1874,
-              "linearizedBaseContracts": [
-                1874
-              ],
+              "linearizedBaseContracts": [1874],
               "name": "INFT",
               "nameLocation": "67:4:11",
               "nodeType": "ContractDefinition",

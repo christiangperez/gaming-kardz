@@ -41,7 +41,7 @@ const initialState: IStateMarket = {
   nftTransactions: [],
   isOwner: false,
   transactionResult: {
-    show: false,
+    show: false
   },
   balanceToClaim: '',
   loadingMarketplaceItems: false,
@@ -52,7 +52,7 @@ const initialState: IStateMarket = {
   loadingNFTTransactions: false,
   loadingClaimEarns: false,
   loadingBalanceToClaim: false,
-  enqueueSnackbar: undefined,
+  enqueueSnackbar: undefined
 };
 
 export const marketReducer = (
@@ -63,86 +63,86 @@ export const marketReducer = (
     case 'setAccount':
       return {
         ...state,
-        account: action.payload,
+        account: action.payload
       };
 
     case 'setContracts':
       return {
         ...state,
         nftContract: action.payload.nft,
-        marketplaceContract: action.payload.marketplace,
+        marketplaceContract: action.payload.marketplace
       };
 
     case 'setMarketplaceItems':
       return {
         ...state,
-        marketplaceItems: action.payload,
+        marketplaceItems: action.payload
       };
 
     case 'setMyNFTsItems':
       return {
         ...state,
-        myNFTsItems: action.payload,
+        myNFTsItems: action.payload
       };
 
     case 'setBalanceToClaim':
       return {
         ...state,
-        balanceToClaim: action.payload,
+        balanceToClaim: action.payload
       };
 
     case 'loadingMarketplaceItems':
       return {
         ...state,
-        loadingMarketplaceItems: action.payload,
+        loadingMarketplaceItems: action.payload
       };
 
     case 'loadingMyNFTsItems':
       return {
         ...state,
-        loadingMyNFTsItems: action.payload,
+        loadingMyNFTsItems: action.payload
       };
 
     case 'loadingPurchaseItem':
       return {
         ...state,
-        loadingPurchaseItem: action.payload,
+        loadingPurchaseItem: action.payload
       };
 
     case 'loadingSetItemOnSale':
       return {
         ...state,
-        loadingSetItemOnSale: action.payload,
+        loadingSetItemOnSale: action.payload
       };
 
     case 'loadingActiveNFT':
       return {
         ...state,
-        loadingActiveNFT: action.payload,
+        loadingActiveNFT: action.payload
       };
 
     case 'loadingNFTTransactions':
       return {
         ...state,
-        loadingNFTTransactions: action.payload,
+        loadingNFTTransactions: action.payload
       };
 
     case 'loadingClaimEarns':
       return {
         ...state,
-        loadingClaimEarns: action.payload,
+        loadingClaimEarns: action.payload
       };
 
     case 'loadingBalanceToClaim':
       return {
         ...state,
-        loadingBalanceToClaim: action.payload,
+        loadingBalanceToClaim: action.payload
       };
 
     case 'setIsOwner':
       return {
         ...state,
-        isOwner: action.payload,
+        isOwner: action.payload
       };
 
     case 'showSnackbarTransactionResult':
@@ -151,8 +151,8 @@ export const marketReducer = (
         transactionResult: {
           ...state.transactionResult,
           ...action.payload,
-          show: true,
-        },
+          show: true
+        }
       };
 
     case 'hideSnackbarTransactionResult':
@@ -160,26 +160,26 @@ export const marketReducer = (
         ...state,
         transactionResult: {
           ...state.transactionResult,
-          show: false,
-        },
+          show: false
+        }
       };
 
     case 'setActiveNFT':
       return {
         ...state,
-        activeNFT: action.payload,
+        activeNFT: action.payload
       };
 
     case 'setNFTTransactions':
       return {
         ...state,
-        nftTransactions: action.payload,
+        nftTransactions: action.payload
       };
 
     case 'setEnqueueSnackbar':
       return {
         ...state,
-        enqueueSnackbar: action.payload,
+        enqueueSnackbar: action.payload
       };
 
     default:

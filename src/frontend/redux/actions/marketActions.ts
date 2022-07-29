@@ -39,7 +39,7 @@ export const loadMarketplaceItems = () => {
             image: metadata.image,
             seller: item.seller,
             price: item.price,
-            onSale: true,
+            onSale: true
           });
         }
       }
@@ -87,7 +87,7 @@ export const loadMyNFTsItems = () => {
             image: metadata.image,
             seller: i.seller,
             price: i.price,
-            onSale: i.onSale,
+            onSale: i.onSale
           };
           listedItems.push(item);
         }
@@ -120,7 +120,7 @@ export const purchaseMarketplaceItem = (item: INFTItem) => {
 
       await (
         await marketplaceContract.purchaseItem(item.tokenId, {
-          value: item.totalPrice,
+          value: item.totalPrice
         })
       ).wait();
 
@@ -176,7 +176,9 @@ export const getContractOwner = () => {
       dispatch({
         type: 'setIsOwner',
         payload:
-          (String(contractOwner).toLowerCase() === String(account).toLowerCase()) === true
+          (String(contractOwner).toLowerCase() ===
+            String(account).toLowerCase()) ===
+          true
       });
     } catch (error) {
       const { enqueueSnackbar } = getState().market;
@@ -215,7 +217,7 @@ export const getNFTItem = (tokenId: any) => {
         image: metadata.image,
         seller: i.seller,
         price: i.price,
-        onSale: i.onSale,
+        onSale: i.onSale
       };
 
       dispatch({ type: 'setActiveNFT', payload: item });
@@ -259,7 +261,7 @@ export const loadNFTTransactions = (tokenId: number) => {
             price: args.price,
             tokenId: args.tokenId,
             seller: args.seller,
-            buyer: args.buyer,
+            buyer: args.buyer
           };
 
           return purchasedItem;
@@ -313,7 +315,7 @@ export const getBalanceToClaim = () => {
 
       dispatch({
         type: 'setBalanceToClaim',
-        payload: balanceToClaim.toString(),
+        payload: balanceToClaim.toString()
       });
 
       dispatch({ type: 'loadingBalanceToClaim', payload: false });
