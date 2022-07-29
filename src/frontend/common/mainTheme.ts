@@ -8,5 +8,5 @@ export const mainTheme = {
   darkColor: '#000338',
 
   contrastColor: '#fff',
-  textColor: 'white',
+  textColor: 'white'
 };

@@ -93,7 +93,7 @@ export const MintScreen = () => {
     const file = event.target.files[0];
     if (typeof file !== 'undefined') {
       try {
-        var reader = new FileReader();
+        const reader = new FileReader();
         reader.onload = onReaderLoad;
         reader.readAsText(event.target.files[0]);
       } catch (error) {

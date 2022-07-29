@@ -21,22 +21,14 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
       },
-      "imports": [
-        "@openzeppelin/contracts/token/ERC721/ERC721.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "ERC721Extend"
-      ]
+      "imports": ["@openzeppelin/contracts/token/ERC721/ERC721.sol"],
+      "versionPragmas": ["^0.8.0"],
+      "artifacts": ["ERC721Extend"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
       "lastModificationDate": 1651193084736,
@@ -58,9 +50,7 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
@@ -74,12 +64,8 @@
         "../../utils/Strings.sol",
         "../../utils/introspection/ERC165.sol"
       ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "ERC721"
-      ]
+      "versionPragmas": ["^0.8.0"],
+      "artifacts": ["ERC721"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
       "lastModificationDate": 1651193085150,
@@ -101,22 +87,14 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
       },
-      "imports": [
-        "../../utils/introspection/IERC165.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC721"
-      ]
+      "imports": ["../../utils/introspection/IERC165.sol"],
+      "versionPragmas": ["^0.8.0"],
+      "artifacts": ["IERC721"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
       "lastModificationDate": 1651193085176,
@@ -138,20 +116,14 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
       },
       "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC721Receiver"
-      ]
+      "versionPragmas": ["^0.8.0"],
+      "artifacts": ["IERC721Receiver"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
       "lastModificationDate": 1651193085170,
@@ -173,22 +145,14 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
       },
-      "imports": [
-        "../IERC721.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC721Metadata"
-      ]
+      "imports": ["../IERC721.sol"],
+      "versionPragmas": ["^0.8.0"],
+      "artifacts": ["IERC721Metadata"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/node_modules/@openzeppelin/contracts/utils/Address.sol": {
       "lastModificationDate": 1651193084128,
@@ -210,20 +174,14 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
       },
       "imports": [],
-      "versionPragmas": [
-        "^0.8.1"
-      ],
-      "artifacts": [
-        "Address"
-      ]
+      "versionPragmas": ["^0.8.1"],
+      "artifacts": ["Address"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/node_modules/@openzeppelin/contracts/utils/Context.sol": {
       "lastModificationDate": 1651193084206,
@@ -245,20 +203,14 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
       },
       "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "Context"
-      ]
+      "versionPragmas": ["^0.8.0"],
+      "artifacts": ["Context"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
       "lastModificationDate": 1651193085536,
@@ -280,20 +232,14 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
       },
       "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "Strings"
-      ]
+      "versionPragmas": ["^0.8.0"],
+      "artifacts": ["Strings"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
       "lastModificationDate": 1651193084514,
@@ -315,22 +261,14 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
       },
-      "imports": [
-        "./IERC165.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "ERC165"
-      ]
+      "imports": ["./IERC165.sol"],
+      "versionPragmas": ["^0.8.0"],
+      "artifacts": ["ERC165"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
       "lastModificationDate": 1651193085107,
@@ -352,20 +290,14 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
       },
       "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC165"
-      ]
+      "versionPragmas": ["^0.8.0"],
+      "artifacts": ["IERC165"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/src/solidity/contracts/ERC721URIStorageReplace.sol": {
       "lastModificationDate": 1651193922371,
@@ -387,22 +319,14 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
       },
-      "imports": [
-        "./ERC721Extend.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "ERC721URIStorageReplace"
-      ]
+      "imports": ["./ERC721Extend.sol"],
+      "versionPragmas": ["^0.8.0"],
+      "artifacts": ["ERC721URIStorageReplace"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/src/solidity/contracts/NFT.sol": {
       "lastModificationDate": 1658714726311,
@@ -424,9 +348,7 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
@@ -435,12 +357,8 @@
         "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
         "../interfaces/INFT.sol"
       ],
-      "versionPragmas": [
-        "^0.8.4"
-      ],
-      "artifacts": [
-        "NFT"
-      ]
+      "versionPragmas": ["^0.8.4"],
+      "artifacts": ["NFT"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/src/solidity/interfaces/INFT.sol": {
       "lastModificationDate": 1658714777654,
@@ -462,20 +380,14 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
       },
       "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "INFT"
-      ]
+      "versionPragmas": ["^0.8.0"],
+      "artifacts": ["INFT"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/src/solidity/contracts/Marketplace.sol": {
       "lastModificationDate": 1658758953490,
@@ -497,9 +409,7 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
@@ -509,12 +419,8 @@
         "../interfaces/IERC721Extend.sol",
         "../interfaces/INFT.sol"
       ],
-      "versionPragmas": [
-        "^0.8.4"
-      ],
-      "artifacts": [
-        "Marketplace"
-      ]
+      "versionPragmas": ["^0.8.4"],
+      "artifacts": ["Marketplace"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol": {
       "lastModificationDate": 1651193085450,
@@ -536,20 +442,14 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
       },
       "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "ReentrancyGuard"
-      ]
+      "versionPragmas": ["^0.8.0"],
+      "artifacts": ["ReentrancyGuard"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/src/solidity/interfaces/IERC721Extend.sol": {
       "lastModificationDate": 1658713744723,
@@ -571,22 +471,14 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
       },
-      "imports": [
-        "@openzeppelin/contracts/token/ERC721/IERC721.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC721Extend"
-      ]
+      "imports": ["@openzeppelin/contracts/token/ERC721/IERC721.sol"],
+      "versionPragmas": ["^0.8.0"],
+      "artifacts": ["IERC721Extend"]
     },
     "/Users/christianperez/proyects/solidity/gaming-kardz/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol": {
       "lastModificationDate": 1651193084798,
@@ -608,22 +500,14 @@
                 "evm.methodIdentifiers",
                 "metadata"
               ],
-              "": [
-                "ast"
-              ]
+              "": ["ast"]
             }
           }
         }
       },
-      "imports": [
-        "../ERC721.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "ERC721URIStorage"
-      ]
+      "imports": ["../ERC721.sol"],
+      "versionPragmas": ["^0.8.0"],
+      "artifacts": ["ERC721URIStorage"]
     }
   }
 }

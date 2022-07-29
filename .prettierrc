@@ -1,6 +1,5 @@
 {
-    "singleQuote": true,
-    "jsxSingleQuote": false,
-    "trailingComma": "none"
-  }
-  
+  "singleQuote": true,
+  "jsxSingleQuote": false,
+  "trailingComma": "none"
+}

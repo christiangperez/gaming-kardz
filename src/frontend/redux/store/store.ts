@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import { marketReducer } from '../reducers/marketReducer';
 
 const rootReducer = combineReducers({
-  market: marketReducer,
+  market: marketReducer
 });
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));
