@@ -9,11 +9,11 @@ import collectionExample from '../../../../frontend/assets/data/collectionExampl
 import { IJsonCollection } from '../../../interfaces/marketplaceInterfaces';
 import { mainTheme } from '../../../common/mainTheme';
 import { INFURA_IPFS_API, INFURA_IPFS_URI } from '../../../constants/constants';
-import nftContractAddress from '../../../contractsData/NFT-address.json';
 
 export const MintScreen = () => {
-  const { nftContract, marketplaceContract, enqueueSnackbar, account } =
-    useSelector((state: IRootState) => state.market);
+  const { nftContract, marketplaceContract, enqueueSnackbar } = useSelector(
+    (state: IRootState) => state.market
+  );
 
   const [image, setImage] = useState('');
   const [uris, setUris] = useState<any[]>([]);
@@ -32,7 +32,10 @@ export const MintScreen = () => {
     const file = event.target.files[0];
     if (typeof file !== 'undefined') {
       try {
-        const result = await client.add(file);
+        const result = await client.add(file, {
+          progress: (progressValue: any) =>
+            console.log(`received: ${progressValue}`)
+        });
 
         setImage(`${INFURA_IPFS_URI}/${result.path}`);
         setCopyButtonText('Copy');
@@ -49,7 +52,7 @@ export const MintScreen = () => {
   useEffect(() => {
     const loadUris = async () => {
       if (jsonCollectionStr) {
-        let jsonCollection: IJsonCollection = JSON.parse(jsonCollectionStr);
+        const jsonCollection: IJsonCollection = JSON.parse(jsonCollectionStr);
 
         setCollectionOwner(jsonCollection.collectionOwner);
         setEarnsPercentage(jsonCollection.earnsPercentage);
@@ -63,7 +66,7 @@ export const MintScreen = () => {
               name: element.name,
               team: element.team,
               game: element.game,
-              description: element.description,
+              description: element.description
             })
           );
           const uri = `${INFURA_IPFS_URI}/${result.path}`;
@@ -114,8 +117,8 @@ export const MintScreen = () => {
       await (
         await marketplaceContract.mintCollection(
           uris,
-          collectionOwner ? collectionOwner : '0x0',
-          earnsPercentage ? earnsPercentage : 0,
+          collectionOwner || '0x0',
+          earnsPercentage || 0,
           nftContract.address,
           nftContract.address,
           prices
@@ -172,7 +175,7 @@ export const MintScreen = () => {
         maxWidth="xl"
         sx={{ paddingTop: 4 }}
         style={{
-          background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`,
+          background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`
         }}
       >
         <Grid display="flex" justifyContent="center">
@@ -222,25 +225,25 @@ export const MintScreen = () => {
             variant="outlined"
             value={image}
             InputLabelProps={{
-              style: { color: '#fff' },
+              style: { color: '#fff' }
             }}
             sx={{
               marginTop: 4,
               input: { color: 'white' },
               '& .MuiInputLabel-root': { color: '#dbdbdb' },
               '& .MuiOutlinedInput-root': {
-                '& > fieldset': { borderColor: '#dbdbdb' },
+                '& > fieldset': { borderColor: '#dbdbdb' }
               },
               '& .MuiOutlinedInput-root.Mui-focused': {
                 '& > fieldset': {
-                  borderColor: mainTheme.primaryColor,
-                },
+                  borderColor: mainTheme.primaryColor
+                }
               },
               '& .MuiOutlinedInput-root:hover': {
                 '& > fieldset': {
-                  borderColor: mainTheme.primaryColor,
-                },
-              },
+                  borderColor: mainTheme.primaryColor
+                }
+              }
             }}
           />
           <Button onClick={handleClickCopy} sx={{ marginBottom: 5 }}>

@@ -5,7 +5,7 @@ import { ethers } from 'ethers';
 import { mainTheme } from '../../../common/mainTheme';
 import {
   claimEarns,
-  getBalanceToClaim,
+  getBalanceToClaim
 } from '../../../redux/actions/marketActions';
 import { IRootState } from '../../../redux/store/store';
 
@@ -27,7 +27,7 @@ const ClaimScreen = () => {
         maxWidth="xl"
         sx={{ paddingTop: 2 }}
         style={{
-          background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`,
+          background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`
         }}
       >
         <Grid display="flex" justifyContent="center">

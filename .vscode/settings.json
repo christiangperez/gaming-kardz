@@ -1,9 +1,0 @@
-{
-    "editor.codeActionsOnSave": {
-      "source.fixAll": true
-    },
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "prettier.singleQuote": true
-  }
-  

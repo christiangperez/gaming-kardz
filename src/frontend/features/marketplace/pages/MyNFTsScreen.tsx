@@ -8,12 +8,12 @@ import {
   Modal,
   Box,
   TextField,
-  CircularProgress,
+  CircularProgress
 } from '@mui/material';
 import { IRootState } from '../../../redux/store/store';
 import {
   loadMyNFTsItems,
-  setItemOnSale,
+  setItemOnSale
 } from '../../../redux/actions/marketActions';
 import { INFTItem } from '../../../interfaces/marketplaceInterfaces';
 import { useNavigate } from 'react-router';
@@ -112,10 +112,10 @@ export const MyNFTsScreen = () => {
                   transform: 'translate(-50%, -50%)',
                   width: 400,
                   boxShadow: 24,
-                  p: 4,
+                  p: 4
                 }}
                 style={{
-                  background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`,
+                  background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`
                 }}
               >
                 <Typography
@@ -131,8 +131,8 @@ export const MyNFTsScreen = () => {
                   color={mainTheme.textColor}
                   sx={{ mt: 2 }}
                 >
-                  Remember you can't change the price. When you put on sale the
-                  token, you need to wait to someone buy your token.
+                  Remember you can not change the price. When you put on sale
+                  the token, you need to wait to someone buy your token.
                 </Typography>
                 <TextField
                   id="outlined-basic"
@@ -142,25 +142,25 @@ export const MyNFTsScreen = () => {
                   value={price}
                   onChange={(p) => setPrice(p.target.value)}
                   InputLabelProps={{
-                    style: { color: mainTheme.textColor },
+                    style: { color: mainTheme.textColor }
                   }}
                   sx={{
                     marginTop: 4,
                     input: { color: 'white' },
                     '& .MuiInputLabel-root': { color: '#dbdbdb' },
                     '& .MuiOutlinedInput-root': {
-                      '& > fieldset': { borderColor: '#dbdbdb' },
+                      '& > fieldset': { borderColor: '#dbdbdb' }
                     },
                     '& .MuiOutlinedInput-root.Mui-focused': {
                       '& > fieldset': {
-                        borderColor: mainTheme.primaryColor,
-                      },
+                        borderColor: mainTheme.primaryColor
+                      }
                     },
                     '& .MuiOutlinedInput-root:hover': {
                       '& > fieldset': {
-                        borderColor: mainTheme.primaryColor,
-                      },
-                    },
+                        borderColor: mainTheme.primaryColor
+                      }
+                    }
                   }}
                 />
                 <Button
@@ -190,7 +190,7 @@ export const MyNFTsScreen = () => {
             sx={{ marginTop: 10, marginLeft: 5, marginRight: 5 }}
           >
             <Typography color={mainTheme.textColor} variant="h5">
-              You don't have any NFT.. Explore the market to buy one
+              You don not have any NFT.. Explore the market to buy one
             </Typography>
           </Grid>
           <Grid display="flex" justifyContent="center" sx={{ marginTop: 8 }}>

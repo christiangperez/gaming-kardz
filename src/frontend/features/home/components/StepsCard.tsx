@@ -26,7 +26,7 @@ export const StepsCard = ({ imageIcon, description }: IProps) => {
         borderColor="#d0f177"
         sx={{ borderRadius: '24px', paddingTop: 2, paddingBottom: 2 }}
         style={{
-          background: `linear-gradient(to right bottom, ${mainTheme.secondaryColor}, ${mainTheme.terciaryColor})`,
+          background: `linear-gradient(to right bottom, ${mainTheme.secondaryColor}, ${mainTheme.terciaryColor})`
         }}
       >
         <Grid item display="flex" justifyContent="center" alignItems="center">

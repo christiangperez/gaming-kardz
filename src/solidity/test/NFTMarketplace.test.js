@@ -6,10 +6,10 @@ const fromWei = (num) => ethers.utils.formatEther(num);
 
 describe('NFTMarketplace', () => {
   let deployer, addr1, addr2, addr3, addr4, nft, marketplace;
-  let feePercent = 1;
-  let feeCollectionPercent = 1;
-  let feeRoyaltiesPercent = 1;
-  let collectionOwnerEarnPercent = 0;
+  const feePercent = 1;
+  const feeCollectionPercent = 1;
+  const feeRoyaltiesPercent = 1;
+  const collectionOwnerEarnPercent = 0;
 
   beforeEach(async () => {
     const NFT = await ethers.getContractFactory('NFT');
@@ -46,8 +46,8 @@ describe('NFTMarketplace', () => {
     });
 
     it('should change the fee percent of marketplace and fee percent of royalties', async () => {
-      let newFeePercent = 2;
-      let newFeePercentRoyalties = 2;
+      const newFeePercent = 2;
+      const newFeePercentRoyalties = 2;
 
       marketplace.connect(deployer).changeFeePercent(newFeePercent);
       marketplace

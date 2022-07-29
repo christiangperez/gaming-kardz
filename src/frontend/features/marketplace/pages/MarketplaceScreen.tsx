@@ -7,11 +7,11 @@ import {
   Container,
   Grid,
   CircularProgress,
-  Box,
+  Box
 } from '@mui/material';
 import {
   loadMarketplaceItems,
-  purchaseMarketplaceItem,
+  purchaseMarketplaceItem
 } from '../../../redux/actions/marketActions';
 import { INFTItem } from '../../../interfaces/marketplaceInterfaces';
 import { NFTMarketplaceCard } from '../components/NFTMarketplaceCard';
@@ -59,7 +59,7 @@ export const MarketplaceScreen = () => {
       maxWidth="xl"
       sx={{ paddingTop: 2 }}
       style={{
-        background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`,
+        background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`
       }}
     >
       {marketplaceItems.length > 0 ? (

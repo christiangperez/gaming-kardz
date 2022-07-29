@@ -4,7 +4,7 @@ import {
   CssBaseline,
   GlobalStyles,
   ThemeProvider,
-  createTheme,
+  createTheme
 } from '@mui/material';
 
 import { store } from './redux/store/store';
@@ -17,17 +17,17 @@ const theme = createTheme({
     primary: {
       main: '#d0f177',
       light: '#0209a1',
-      dark: '#000338',
+      dark: '#000338'
     },
     secondary: {
       main: '#192112',
       light: '#0fa9bd',
-      dark: '#0a6b78',
-    },
+      dark: '#0a6b78'
+    }
   },
   typography: {
-    fontFamily: ['Urbanist', 'Roboto', 'sans-serif'].join(','),
-  },
+    fontFamily: ['Urbanist', 'Roboto', 'sans-serif'].join(',')
+  }
 });
 
 const App = () => {

@@ -7,7 +7,7 @@ import {
   Button,
   Box,
   useMediaQuery,
-  useTheme,
+  useTheme
 } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SellIcon from '@mui/icons-material/Sell';
@@ -49,7 +49,7 @@ export const HomeScreen = () => {
   // Scroll Effect Listener
   useEffect(() => {
     const scrollListener = () => {
-      let screenSize = window.innerHeight;
+      const screenSize = window.innerHeight;
 
       if (refSellImage.current) {
         if (refSellImage.current.getBoundingClientRect().top < screenSize) {
@@ -112,7 +112,7 @@ export const HomeScreen = () => {
       <Container
         maxWidth="xl"
         style={{
-          background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`,
+          background: `linear-gradient(to right bottom, ${mainTheme.fourthColor}, ${mainTheme.secondaryColor})`
         }}
       >
         {/* Explore Section */}
@@ -169,7 +169,7 @@ export const HomeScreen = () => {
                   pt: { xs: 1, md: 2 },
                   pb: { xs: 1, md: 2 },
                   pl: { xs: 3, md: 6 },
-                  pr: { xs: 3, md: 6 },
+                  pr: { xs: 3, md: 6 }
                 }}
                 onClick={() => navigate('/market')}
               >
@@ -182,7 +182,7 @@ export const HomeScreen = () => {
               component="img"
               sx={{
                 maxHeight: { xs: 250, md: 500 },
-                maxWidth: { xs: 350, md: 500 },
+                maxWidth: { xs: 350, md: 500 }
               }}
               alt="The house from the offer."
               src={VitalityHome}
@@ -214,7 +214,7 @@ export const HomeScreen = () => {
                 sx={{
                   maxHeight: { xs: 250, md: 350 },
                   maxWidth: { xs: 350, md: 350 },
-                  marginTop: { xs: 5, md: 0 },
+                  marginTop: { xs: 5, md: 0 }
                 }}
                 alt="Sell"
                 src={SellHome}
@@ -229,7 +229,7 @@ export const HomeScreen = () => {
               className="fadeRight"
               sx={{
                 marginLeft: { xs: 1, md: 0 },
-                marginRight: { xs: 1, md: 0 },
+                marginRight: { xs: 1, md: 0 }
               }}
             >
               <Typography
@@ -270,7 +270,7 @@ export const HomeScreen = () => {
               paddingBottom: 20,
               marginTop: 10,
               marginLeft: { xs: 1, md: 0 },
-              marginRight: { xs: 1, md: 0 },
+              marginRight: { xs: 1, md: 0 }
             }}
           >
             <Typography

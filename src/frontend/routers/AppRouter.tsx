@@ -1,10 +1,5 @@
 import { useEffect, useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { ethers } from 'ethers';
@@ -22,7 +17,7 @@ import { AboutScreen } from '../features/home/pages/AboutScreen';
 import {
   getContractOwner,
   loadMarketplaceItems,
-  loadMyNFTsItems,
+  loadMyNFTsItems
 } from '../redux/actions/marketActions';
 import { NFTDetailScreen } from '../features/marketplace/pages/NFTDetailScreen';
 import { HomeScreen } from '../features/home/pages/HomeScreen';
@@ -67,12 +62,12 @@ export const AppRouter = () => {
     });
 
     const accounts = await window.ethereum.request({
-      method: 'eth_requestAccounts',
+      method: 'eth_requestAccounts'
     });
 
     dispatch({
       type: 'setAccount',
-      payload: String(accounts[0]).toLowerCase(),
+      payload: String(accounts[0]).toLowerCase()
     });
     // Get provider from Metamask
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -132,9 +127,9 @@ export const AppRouter = () => {
             itemId,
             tokenId,
             price,
-            seller,
+            seller
           },
-          ...prev,
+          ...prev
         ]);
       }
     };
@@ -158,9 +153,9 @@ export const AppRouter = () => {
             tokenId,
             price,
             seller,
-            buyer,
+            buyer
           },
-          ...prev,
+          ...prev
         ]);
       }
     };

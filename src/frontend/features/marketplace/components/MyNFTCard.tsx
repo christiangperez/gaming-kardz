@@ -6,7 +6,7 @@ import {
   CardMedia,
   CardActions,
   Button,
-  Grid,
+  Grid
 } from '@mui/material';
 import { ethers } from 'ethers';
 import { mainTheme } from '../../../common/mainTheme';
@@ -22,7 +22,7 @@ interface IProps {
 export const MyNFTCard = ({
   item,
   handleClickCard,
-  handleClickOpenSetOnSale,
+  handleClickOpenSetOnSale
 }: IProps) => {
   return (
     <Card
@@ -32,7 +32,7 @@ export const MyNFTCard = ({
           item.latestPrice > 0
             ? mainTheme.terciaryColor
             : mainTheme.primaryColor
-        }, ${mainTheme.secondaryColor})`,
+        }, ${mainTheme.secondaryColor})`
       }}
     >
       <CardActionArea onClick={() => handleClickCard(item)}>
